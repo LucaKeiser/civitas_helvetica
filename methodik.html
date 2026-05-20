@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Methodik · vox helvetica publica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand-group">
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-label="Vox Helvetica">
+          <svg viewBox="0 0 32 32" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17L29 17L29 30L3 30Z"/><path d="M1 17L6 10L26 10L31 17"/><path d="M10 12L22 12"/><path d="M13 1L23 3L20 12L10 10Z"/></g>
+          </svg>
+        </div>
+        vox helvetica
+      </a>
+      <span class="brand-divider"></span>
+      <a class="brand-unibas" href="https://soziologie.philhist.unibas.ch/de/personen/oliver-nachtwey/" target="_blank" rel="noopener" aria-label="Universität Basel">
+        <img src="unibas-logo.svg" alt="Universität Basel" />
+      </a>
+      <span class="brand-divider"></span>
+      <a class="brand-cms" href="https://www.cms-basel.ch/" target="_blank" rel="noopener" aria-label="Christoph Merian Stiftung">
+        <span class="cms-logo">
+          <p class="cms-mark">cms</p>
+          <p class="cms-name">Christoph Merian Stiftung</p>
+        </span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Start</a>
+      <a href="chat.html">Demokratie im Dialog</a>
+      <a href="methodik.html" class="active">Methodik</a>
+      <a href="methodik.html#korpus">Korpus</a>
+      <a href="methodik.html#team">Team</a>
+    </div>
+    <a href="chat.html" class="nav-cta">Chat starten →</a>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom: 32px;">
+  <span class="eyebrow"><span class="dot"></span>Methodik & Transparenz</span>
+  <h1 style="font-size: clamp(36px, 5vw, 56px);">Wie diese Anwendung <span class="accent">funktioniert</span>.</h1>
+  <p class="lede lede-grid-aligned" style="margin-bottom: 0;">
+    Eine konversationsbasierte Anwendung ist nur so vertrauenswürdig wie ihre Quellen, ihr Modell und ihre Methode.
+    Hier dokumentieren wir alle drei — offen, reproduzierbar, kritisierbar.
+  </p>
+</header>
+
+<div class="container">
+  <div class="method-grid">
+
+    <nav class="method-toc">
+      <div class="toc-title">Inhalt</div>
+      <a href="#korpus" class="active">Datenkorpus</a>
+      <a href="#modell">LLM &amp; Retrieval</a>
+      <a href="#viz">Visualisierungen</a>
+      <a href="#grenzen">Grenzen &amp; Risiken</a>
+      <a href="#publikationen">Publikationen</a>
+      <a href="#team">Team</a>
+      <a href="#kontakt">Mitarbeit &amp; Kontakt</a>
+    </nav>
+
+    <div class="method-content">
+
+      <section id="korpus">
+        <h2>Der Vox Helvetica Korpus</h2>
+        <p>
+          Grundlage der Anwendung ist der über mehrere Jahre kuratierte und quellenkritisch erschlossene
+          <strong>Vox Helvetica Korpus</strong>. Er erfasst sämtliche eidgenössischen Abstimmungen seit 1848
+          und kombiniert quantitative Mikrodaten mit historischen Primärquellen sowie Sekundärliteratur.
+        </p>
+        <h3>Datenklassen</h3>
+        <ul>
+          <li><strong>Strukturierte Abstimmungsdaten:</strong> Ja-/Nein-Stimmen, Stimmbeteiligung, Stimmberechtigte — bis auf Gemeindeebene (n ≈ 2 252), für 704 eidg. Vorlagen seit 1848.</li>
+          <li><strong>Strukturvariablen:</strong> sozio-ökonomische, demographische und konfessionelle Merkmale pro Gemeinde, harmonisiert über die letzten 150 Jahre.</li>
+          <li><strong>Originaldokumente:</strong> Abstimmungsbüchlein, Plakate, Parteiparolen, Inserate, Presse-Kommentare — digitalisiert und OCR-erschlossen (≈ 12 000 Dokumente).</li>
+          <li><strong>Nachbefragungsdaten:</strong> VOX-Analysen / FORS, individualdatenbasiert ab 1977.</li>
+          <li><strong>Expert:innen-Kontextdokumente:</strong> historiographische und politologische Synthesen, eigens für das LLM-Retrieval verfasst und peer-reviewed.</li>
+        </ul>
+        <div class="callout">
+          <strong>Offenheit.</strong> Der gesamte Korpus wird unter CC-BY-SA-Lizenz veröffentlicht. APIs und Bulk-Downloads sind über das <em>Open Data Portal</em> verfügbar. FAIR-Prinzipien gelten verbindlich.
+          <div class="download-grid">
+            <a class="download-link" href="#"><span class="dl-icon">📊</span><span><strong>Abstimmungsdaten Gemeindeebene</strong><span class="dl-meta">CSV · 1848–2024 · 8.4 MB</span></span></a>
+            <a class="download-link" href="#"><span class="dl-icon">🗺</span><span><strong>Gemeindegeometrie historisch</strong><span class="dl-meta">GeoJSON / TopoJSON · 14 MB</span></span></a>
+            <a class="download-link" href="#"><span class="dl-icon">📈</span><span><strong>Strukturvariablen</strong><span class="dl-meta">CSV · BFS-harmonisiert · 22 MB</span></span></a>
+            <a class="download-link" href="#"><span class="dl-icon">📚</span><span><strong>Originaldokumente</strong><span class="dl-meta">PDF-Bundle · 12 000 Files · 1.8 GB</span></span></a>
+            <a class="download-link" href="#"><span class="dl-icon">🗳</span><span><strong>VOX-Nachbefragungen</strong><span class="dl-meta">Stata / R · ab 1977 · 380 MB</span></span></a>
+            <a class="download-link" href="#"><span class="dl-icon">📖</span><span><strong>Codebook &amp; Handbuch</strong><span class="dl-meta">PDF · v3.1 · 4 MB</span></span></a>
+            <a class="download-link" href="#"><span class="dl-icon">🔌</span><span><strong>REST &amp; GraphQL API</strong><span class="dl-meta">OpenAPI · Spec &amp; Docs</span></span></a>
+            <a class="download-link" href="#"><span class="dl-icon">💻</span><span><strong>Source Code</strong><span class="dl-meta">GitHub · MIT-Lizenz</span></span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="modell">
+        <h2>LLM &amp; Retrieval</h2>
+        <p>
+          Hinter dem Chat-Interface operiert ein Large Language Model im Modus <strong>Retrieval-Augmented Generation (RAG)</strong>.
+          Das Modell generiert keine Antworten aus seinem Trainingswissen, sondern ausschliesslich auf der Basis
+          des im Vorfeld abgerufenen, geprüften Materials.
+        </p>
+        <h3>Architektur in vier Schritten</h3>
+        <ul>
+          <li><strong>1. Frageklassifikation:</strong> Die Nutzer:innen-Frage wird analysiert (quantitative Anfrage? Historischer Kontext? Methodische Reflexion?).</li>
+          <li><strong>2. Quellen-Retrieval:</strong> Aus dem Vox Helvetica Korpus werden die relevantesten Belege abgerufen — strukturiert (SQL) und unstrukturiert (Vektor-Embeddings).</li>
+          <li><strong>3. Antwortgenerierung mit Zitierzwang:</strong> Das LLM darf nur Aussagen formulieren, die durch mindestens eine Quelle gestützt sind. Jede Aussage erhält eine Belegnummer.</li>
+          <li><strong>4. Visualisierungs-Pipeline:</strong> Wo sinnvoll, generiert das System parametrisierte Karten und Zeitreihen aus den Primärdaten.</li>
+        </ul>
+        <div class="callout">
+          <strong>Transparenzgarantie.</strong> Jeder Output wird mit dem zugrundeliegenden Quellenprompt, dem Modell-Hash und dem Datensatz-Snapshot protokolliert.
+          So bleibt jede Antwort reproduzierbar — auch in fünf Jahren.
+        </div>
+      </section>
+
+      <section id="viz">
+        <h2>Interaktive Visualisierungen</h2>
+        <p>
+          Antworten werden durch reproduzierbare, interaktive Visualisierungen ergänzt: Choroplethen-Karten der 2 252 Schweizer Gemeinden,
+          historische Zeitreihen, Vergleichsplots zwischen Strukturvariablen, sowie räumliche Cluster-Analysen.
+          Alle Diagramme sind als PNG/SVG exportierbar; die zugrundeliegenden Daten lassen sich als CSV oder über die API beziehen.
+        </p>
+        <h3>Verfügbare Visualisierungstypen</h3>
+        <ul>
+          <li>Schweizer Choroplethen (Gemeinde-, Bezirks-, Kantonsebene)</li>
+          <li>Historische Zeitreihen (1848–heute) mit Annotationen wichtiger Ereignisse</li>
+          <li>Sprachregionen- und Stadt-Land-Vergleiche</li>
+          <li>Strukturvariablen-Korrelationen (z. B. Konfession × Ja-Anteil)</li>
+          <li>Lebenslauf-Simulator: «Wie hätte jemand wie ich vor X Jahren abgestimmt?»</li>
+        </ul>
+      </section>
+
+      <section id="grenzen">
+        <h2>Grenzen &amp; Risiken</h2>
+        <p>
+          Eine wissenschaftlich seriöse Anwendung benennt ihre Grenzen aktiv. Wir nehmen die mit LLMs
+          verbundenen Risiken ernst und adressieren sie systematisch:
+        </p>
+        <h3>Bekannte Limitationen</h3>
+        <ul>
+          <li><strong>Datenlücken vor 1971:</strong> Frauen waren auf Bundesebene nicht stimmberechtigt. Aussagen über «die Schweizer Bevölkerung» vor 1971 betreffen ausschliesslich die männliche Stimmberechtigung.</li>
+          <li><strong>Gemeinde-Reformen:</strong> Fusionen seit 1850 verändern die Vergleichbarkeit. Wir nutzen rückprojizierte Gemeindegrenzen (BFS, 2024).</li>
+          <li><strong>Kausalität ≠ Korrelation:</strong> Das LLM kennzeichnet Korrelationen explizit als solche und vermeidet kausale Sprache, wo nicht angebracht.</li>
+          <li><strong>LLM-Konfabulation:</strong> Trotz Retrieval-Grounding bleibt ein Restrisiko inkorrekter Synthese. Bei niedrigem Vertrauensindex (&lt; 70 %) zeigt das System eine Warnung.</li>
+          <li><strong>Sprachliche Bias:</strong> Quellen sind überwiegend auf Deutsch; Französisch- und Italienisch-Quellen sind unterrepräsentiert. Wir arbeiten aktiv an Ausgleich.</li>
+        </ul>
+        <div class="callout">
+          <strong>Bei Unsicherheit: Quelle prüfen.</strong> Das Werkzeug ersetzt keine wissenschaftliche Recherche, sondern soll sie eröffnen.
+          Jede Aussage verlinkt auf das Originalmaterial — die Letzt-Beurteilung liegt bei der Nutzer:in.
+        </div>
+      </section>
+
+      <section id="publikationen">
+        <h2>Publikationen</h2>
+        <p>Methodik und Korpus sind in peer-reviewed Publikationen dokumentiert:</p>
+        <ul>
+          <li>Keiser, L., Nachtwey, O. &amp; Truffer, J. (2026). <em>The Vox Helvetica Corpus: A Multi-Modal Dataset of Swiss Direct Democracy, 1874–2024.</em> Swiss Political Science Review, 31(2), 184–212.</li>
+          <li>Nachtwey, O. et al. (2028). <em>Conversational Public Science: Designing a Trustworthy LLM Interface for Historical Voting Data.</em> Digital Scholarship in the Humanities, forthcoming.</li>
+          <li>Keiser, L., Nachtwey, O. &amp; Truffer, J. (2027). <em>Sonderbund and Capital-hostile voting in Switzerland: A re-analysis of 150 years of eidgenössischer Abstimmungen.</em> American Journal of Sociology.</li>
+        </ul>
+      </section>
+
+      <section id="team">
+        <h2>Team</h2>
+        <p>Das Vox Helvetica Lab ist ein interdisziplinärer Verbund aus Politik- und Sozialwissenschaft, Geschichtswissenschaft, Digital Humanities und Computer Science.</p>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-photo"><img src="team-nachtwey.jpg" alt="Oliver Nachtwey" onerror="this.style.display='none'; this.parentNode.classList.add('photo-fallback'); this.parentNode.textContent='ON';"></div>
+            <h4>Prof. Dr. Oliver Nachtwey</h4>
+            <p>Lab-Leiter</p>
+          </div>
+          <div class="team-card">
+            <div class="team-photo"><img src="team-keiser.jpg" alt="Luca Keiser" onerror="this.style.display='none'; this.parentNode.classList.add('photo-fallback'); this.parentNode.textContent='LK';"></div>
+            <h4>Luca Keiser, M.A.</h4>
+            <p>Leitender Doktorand</p>
+          </div>
+          <div class="team-card">
+            <div class="team-photo"><img src="team-truffer.jpg" alt="Johannes Truffer" onerror="this.style.display='none'; this.parentNode.classList.add('photo-fallback'); this.parentNode.textContent='JT';"></div>
+            <h4>Johannes Truffer, M.A.</h4>
+            <p>Scientific Advisor</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt">
+        <h2>Mitarbeit &amp; Kontakt</h2>
+        <p>
+          Wir verstehen <strong>vox-helvetica-publica.ch</strong> als demokratische Infrastruktur — und damit als
+          ein Projekt, das von Rückmeldungen lebt. Hinweise auf Fehler, fehlende Quellen, methodische Kritik
+          und Vorschläge für neue Vertiefungsbereiche sind ausdrücklich willkommen.
+        </p>
+        <ul>
+          <li><strong>Allgemein:</strong> kontakt@vox-helvetica-publica.ch</li>
+          <li><strong>Fehler melden:</strong> erratum@vox-helvetica-publica.ch</li>
+          <li><strong>Mitarbeit / Beiträge:</strong> mitarbeit@vox-helvetica-publica.ch</li>
+          <li><strong>Code &amp; Daten:</strong> github.com/vox-helvetica</li>
+        </ul>
+        <div class="callout" style="border-left-color: var(--secondary);">
+          <strong>Beta-Hinweis.</strong> Diese Anwendung befindet sich in der öffentlichen Erprobungsphase.
+          Antworten können fehlerhaft sein. Die wissenschaftliche Letzt-Verantwortung verbleibt beim Vox Helvetica Lab —
+          die historische Letzt-Beurteilung bei Ihnen.
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <a href="index.html" class="brand" style="margin-bottom: 14px;">
+        <div class="brand-mark" aria-label="Vox Helvetica">
+          <svg viewBox="0 0 32 32" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17L29 17L29 30L3 30Z"/><path d="M1 17L6 10L26 10L31 17"/><path d="M10 12L22 12"/><path d="M13 1L23 3L20 12L10 10Z"/></g>
+          </svg>
+        </div>
+        vox helvetica
+      </a>
+      <p style="color: var(--text-muted); font-size: 13.5px; max-width: 320px; margin-top: 8px; line-height: 1.6;">
+        Eine Initiative des Vox Helvetica Lab in der Tradition der Public Science.
+      </p>
+    </div>
+    <div>
+      <h4>Anwendung</h4>
+      <ul>
+        <li><a href="chat.html">Demokratie im Dialog</a></li>
+        <li><a href="index.html#fragen">Beispielfragen</a></li>
+        <li><a href="methodik.html">Methodik</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Wissenschaft</h4>
+      <ul>
+        <li><a href="#publikationen">Publikationen</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#kontakt">Mitarbeit</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Lizenz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Vox Helvetica Lab</span>
+    <span>v0.3 · public preview</span>
+  </div>
+</footer>
+
+<script>
+  // TOC active state on scroll
+  const sections = document.querySelectorAll('.method-content section');
+  const tocLinks = document.querySelectorAll('.method-toc a');
+  window.addEventListener('scroll', () => {
+    let active = sections[0].id;
+    sections.forEach(s => { if (window.scrollY + 120 >= s.offsetTop) active = s.id; });
+    tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active));
+  });
+</script>
+</body>
+</html>

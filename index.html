@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>vox helvetica publica — 150 Jahre Schweizer Direktdemokratie, im Dialog</title>
+<meta name="description" content="Konversationsbasierte Web-Anwendung des Vox Helvetica Lab. Frag selbst, was die Schweiz seit 1848 entschieden hat — auf der Basis eines kuratierten, quellenkritisch erschlossenen Korpus." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand-group">
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-label="Vox Helvetica">
+          <svg viewBox="0 0 32 32" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17L29 17L29 30L3 30Z"/><path d="M1 17L6 10L26 10L31 17"/><path d="M10 12L22 12"/><path d="M13 1L23 3L20 12L10 10Z"/></g>
+          </svg>
+        </div>
+        vox helvetica
+      </a>
+      <span class="brand-divider"></span>
+      <a class="brand-unibas" href="https://soziologie.philhist.unibas.ch/de/personen/oliver-nachtwey/" target="_blank" rel="noopener" aria-label="Universität Basel">
+        <img src="unibas-logo.svg" alt="Universität Basel" />
+      </a>
+      <span class="brand-divider"></span>
+      <a class="brand-cms" href="https://www.cms-basel.ch/" target="_blank" rel="noopener" aria-label="Christoph Merian Stiftung">
+        <span class="cms-logo">
+          <p class="cms-mark">cms</p>
+          <p class="cms-name">Christoph Merian Stiftung</p>
+        </span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Start</a>
+      <a href="chat.html">Demokratie im Dialog</a>
+      <a href="methodik.html">Methodik</a>
+      <a href="methodik.html#korpus">Korpus</a>
+      <a href="methodik.html#team">Team</a>
+    </div>
+    <a href="chat.html" class="nav-cta" data-chat-trigger>Chat starten →</a>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero">
+  <span class="eyebrow"><span class="dot dot-live"></span>Democracy Chatbot is live</span>
+  <h1>150 Jahre Direkte&nbsp;Demokratie.<br /><span class="accent">Frag selbst.</span></h1>
+  <p class="lede">
+    Eine konversationsbasierte Anwendung über sämtliche eidgenössischen Abstimmungen
+    seit 1848 — gestützt auf den kuratierten Vox Helvetica Korpus, mit transparenten Quellen,
+    interaktiven Karten bis auf Gemeindeebene und historischer Einordnung durch Expert:innen-Dokumente.
+  </p>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="chat.html" data-chat-trigger>
+      Chat öffnen
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a class="btn-ghost" href="methodik.html">Methodik &amp; Korpus</a>
+  </div>
+
+</header>
+
+<!-- ============================ STATS ============================ -->
+<section class="container">
+  <div class="stats">
+    <div class="stat"><div class="num">704</div><div class="label">eidg. Abstimmungen seit 1848</div></div>
+    <div class="stat"><div class="num">2 252</div><div class="label">Gemeinden im Datensatz</div></div>
+    <div class="stat"><div class="num">12 000+</div><div class="label">digitalisierte Quellendokumente</div></div>
+    <div class="stat"><div class="num">100 %</div><div class="label">belegte, nachvollziehbare Antworten</div></div>
+  </div>
+</section>
+
+<!-- ============================ QUESTIONS ============================ -->
+<section class="section" id="fragen">
+  <div class="section-title section-title-centered">
+    <span class="kicker">Beispielfragen</span>
+    <h2>Was haben Sie schon immer über die Schweizer Demokratie wissen wollen?</h2>
+    <p>Stellen Sie eigene Fragen oder beginnen Sie mit einer der folgenden — die Antwort kombiniert quantitative Daten, historischen Kontext und verlinkte Originalbelege.</p>
+  </div>
+
+  <div class="cards" id="questionCards">
+    <div class="card-q">
+      <span class="q-tag">Gleichberechtigung</span>
+      <div class="q-text">Wie hat die Schweiz historisch zu Fragen der Gleichberechtigung abgestimmt?</div>
+      <div class="q-meta">Mit Zeitreihe seit 1959</div>
+    </div>
+    <div class="card-q">
+      <span class="q-tag">Röstigraben</span>
+      <div class="q-text">Wann zeigt sich erstmals der Röstigraben in den Abstimmungen?</div>
+      <div class="q-meta">Mit Sprachregionen-Karte</div>
+    </div>
+    <div class="card-q">
+      <span class="q-tag">Meine Gemeinde</span>
+      <div class="q-text">Wie hat meine Gemeinde im Vergleich zum Schweizer Durchschnitt zu Migrationsvorlagen gestimmt?</div>
+      <div class="q-meta">Geocodierte Auswertung</div>
+    </div>
+    <div class="card-q">
+      <span class="q-tag">Sozio-ökonomisch</span>
+      <div class="q-text">Wie hat jemand mit meinen sozio-ökonomischen Merkmalen vor 50 Jahren abgestimmt?</div>
+      <div class="q-meta">VOX-Nachbefragungsdaten</div>
+    </div>
+    <div class="card-q">
+      <span class="q-tag">Längsschnitt</span>
+      <div class="q-text">Welche Gemeinden lehnten 1971 das Frauenstimmrecht ab — und wie stimmen sie heute zu Gleichstellungsfragen?</div>
+      <div class="q-meta">Gemeinde-Vergleich</div>
+    </div>
+    <div class="card-q">
+      <span class="q-tag">Sozialstaat</span>
+      <div class="q-text">Was war der historische Kontext der Einführung der AHV in der Schweiz?</div>
+      <div class="q-meta">Mit Expert:innen-Dossier</div>
+    </div>
+    <div class="card-q">
+      <span class="q-tag">Wirtschaftskrisen</span>
+      <div class="q-text">Führen Wirtschaftskrisen dazu, dass unternehmensfreundliche Vorlagen einen schwereren Stand haben?</div>
+      <div class="q-meta">Korrelationsanalyse</div>
+    </div>
+    <div class="card-q">
+      <span class="q-tag">Transparenz</span>
+      <div class="q-text">Auf welchen Quellen beruht diese Antwort und wie verlässlich ist sie?</div>
+      <div class="q-meta">Quellen-Trace</div>
+    </div>
+    <div class="card-q">
+      <span class="q-tag">Empfehlung</span>
+      <div class="q-text">Welche wissenschaftliche Literatur würdest du zur Vertiefung empfehlen?</div>
+      <div class="q-meta">Annotierte Bibliographie</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section class="section" id="funktion">
+  <div class="section-title section-title-centered">
+    <span class="kicker">Wie es funktioniert</span>
+    <h2>Ein Large Language Model auf einem geprüften Datenkorpus.</h2>
+    <p>Die üblichen Risiken eines Chatbots werden reduziert: Jede Aussage ist belegt, jede Visualisierung reproduzierbar, jede Schlussfolgerung historiographisch eingebettet.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="icon">⚙</div>
+      <h3>Retrieval auf kuratiertem Korpus</h3>
+      <p>Das LLM generiert seine Antworten ausschliesslich auf den quellenkritisch erschlossenen Beständen des Vox Helvetica Korpus — keine Halluzinationen aus dem Open Web.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🗺</div>
+      <h3>Karten bis auf Gemeindeebene</h3>
+      <p>Über 2 100 Schweizer Gemeinden mit historischen Ja-Anteilen, Stimmbeteiligung und Strukturvariablen — interaktiv, vergleichbar, herunterladbar.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📊</div>
+      <h3>Historische Zeitreihen</h3>
+      <p>Trends, Brüche und Wendepunkte über 150 Jahre Abstimmungsgeschichte — sichtbar gemacht durch interaktive Visualisierungen.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📜</div>
+      <h3>Originalmaterial verlinkt</h3>
+      <p>Abstimmungsbüchlein, Plakate, Parteiparolen, Presseartikel — jede Antwort verlinkt auf die Primärquellen im Digitalen Archiv.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🎓</div>
+      <h3>Expert:innen-Einordnung</h3>
+      <p>Das LLM greift auf wissenschaftliche Hintergrunddokumente zurück, die jede Antwort historisch, politologisch und methodisch einordnen.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🔍</div>
+      <h3>Transparente Quellenangabe</h3>
+      <p>Jede Aussage trägt eine Belegnummer. Klick auf die Zahl öffnet die Quelle — Vertrauen durch Nachvollziehbarkeit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ MISSION ============================ -->
+<section class="container" id="mission">
+  <div class="mission">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Public Science</span>
+      <h2 style="margin-top:18px;">Wissenschaft, die in die Gesellschaft zurückfliesst.</h2>
+      <p>
+        Das Vox Helvetica Lab versteht sich in der Tradition der Public Science:
+        Wir geben unsere Forschungsergebnisse in nützlicher Frist und in gemeinwohlorientierter Absicht
+        an die Öffentlichkeit zurück. Diese Anwendung senkt die Schwelle zur autodidaktischen Demokratiebildung,
+        unterstützt evidenzbasierte Meinungsbildung und positioniert das Lab als demokratische Infrastruktur —
+        ein öffentlich zugängliches Werkzeug, das historisches Gedächtnis mit datengetriebener
+        Orientierungsleistung und transparenter Quellenarbeit verbindet.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Open Data</span>
+        <span class="pill">Open Source</span>
+        <span class="pill">CC-BY-SA Korpus</span>
+        <span class="pill">FAIR-Prinzipien</span>
+        <span class="pill">Reproduzierbar</span>
+      </div>
+    </div>
+    <div class="mission-visual">
+      <!-- Stylised abstract Switzerland -->
+      <svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#a5d7d2" stop-opacity="0.9"/>
+            <stop offset="1" stop-color="#7dbab3" stop-opacity="0.7"/>
+          </linearGradient>
+        </defs>
+        <g opacity="0.85">
+          <!-- abstract canton dots -->
+          <circle cx="120" cy="160" r="38" fill="url(#g1)" opacity="0.6"/>
+          <circle cx="200" cy="140" r="52" fill="url(#g1)" opacity="0.5"/>
+          <circle cx="280" cy="170" r="44" fill="url(#g1)" opacity="0.7"/>
+          <circle cx="170" cy="220" r="34" fill="url(#g1)" opacity="0.5"/>
+          <circle cx="240" cy="230" r="28" fill="url(#g1)" opacity="0.6"/>
+          <circle cx="300" cy="220" r="22" fill="url(#g1)" opacity="0.4"/>
+        </g>
+        <!-- connecting lines -->
+        <g stroke="#9aa0ac" stroke-width="0.6" opacity="0.4" fill="none">
+          <line x1="120" y1="160" x2="200" y2="140"/>
+          <line x1="200" y1="140" x2="280" y2="170"/>
+          <line x1="280" y1="170" x2="240" y2="230"/>
+          <line x1="240" y1="230" x2="170" y2="220"/>
+          <line x1="170" y1="220" x2="120" y2="160"/>
+          <line x1="200" y1="140" x2="170" y2="220"/>
+          <line x1="200" y1="140" x2="240" y2="230"/>
+          <line x1="280" y1="170" x2="300" y2="220"/>
+        </g>
+        <!-- data points -->
+        <g fill="white">
+          <circle cx="120" cy="160" r="2.5"/>
+          <circle cx="200" cy="140" r="2.5"/>
+          <circle cx="280" cy="170" r="2.5"/>
+          <circle cx="170" cy="220" r="2.5"/>
+          <circle cx="240" cy="230" r="2.5"/>
+          <circle cx="300" cy="220" r="2.5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CHAT MODAL ============================ -->
+<div class="chat-modal-overlay" id="chatModalOverlay" aria-hidden="true">
+  <div class="chat-modal" role="dialog" aria-label="Chat öffnet">
+    <div class="chat-modal-title">
+      <div class="brand-mark-sm" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17L29 17L29 30L3 30Z"/><path d="M1 17L6 10L26 10L31 17"/><path d="M10 12L22 12"/><path d="M13 1L23 3L20 12L10 10Z"/></g>
+        </svg>
+      </div>
+      <span>vox helvetica publica wird gestartet…</span>
+    </div>
+    <div class="chat-modal-composer">
+      <div class="chat-modal-input" id="chatModalInput"></div>
+      <button class="chat-modal-send" id="chatModalSend" aria-label="Senden">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </button>
+    </div>
+    <div class="chat-modal-hint" id="chatModalHint">Sie können auch eigene Fragen stellen — der Chat öffnet sich gleich.</div>
+  </div>
+</div>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <a href="index.html" class="brand" style="margin-bottom: 14px;">
+        <div class="brand-mark" aria-label="Vox Helvetica">
+          <svg viewBox="0 0 32 32" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17L29 17L29 30L3 30Z"/><path d="M1 17L6 10L26 10L31 17"/><path d="M10 12L22 12"/><path d="M13 1L23 3L20 12L10 10Z"/></g>
+          </svg>
+        </div>
+        vox helvetica
+      </a>
+      <p style="color: var(--text-muted); font-size: 13.5px; max-width: 360px; margin-top: 8px; line-height: 1.6;">
+        Eine Initiative des Lehrstuhls Sozialstrukturanalyse der Universität Basel
+        im Geiste einer Public Science. Ermöglicht durch grosszügige Unterstützung
+        durch die Christopher Merian Stiftung Basel.
+      </p>
+    </div>
+    <div>
+      <h4>Anwendung</h4>
+      <ul>
+        <li><a href="chat.html">Demokratie im Dialog</a></li>
+        <li><a href="index.html#fragen">Beispielfragen</a></li>
+        <li><a href="methodik.html#korpus">Korpus</a></li>
+        <li><a href="methodik.html">Methodik</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Wissenschaft</h4>
+      <ul>
+        <li><a href="methodik.html#publikationen">Publikationen</a></li>
+        <li><a href="methodik.html#team">Team</a></li>
+        <li><a href="#">Open Data</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Lizenz (CC-BY-SA)</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Vox Helvetica Lab · Universität — Institut für Politikwissenschaft</span>
+    <span>v0.3 · public preview</span>
+  </div>
+</footer>
+
+<script>
+  // ---------- Mouse-follow glow on cards ----------
+  document.querySelectorAll('.card-q').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+    });
+    card.addEventListener('click', () => {
+      const q = card.querySelector('.q-text').textContent;
+      window.location.href = `chat.html?q=${encodeURIComponent(q)}`;
+    });
+  });
+
+  // ---------- Chat-opening modal with typing animation ----------
+  const overlay   = document.getElementById('chatModalOverlay');
+  const inputEl   = document.getElementById('chatModalInput');
+  const sendEl    = document.getElementById('chatModalSend');
+  const hintEl    = document.getElementById('chatModalHint');
+  const QUESTION  = "Wann zeigt sich erstmals der Röstigraben in den Abstimmungen?";
+  let modalOpen   = false;
+
+  function openChatModal() {
+    if (modalOpen) return;
+    modalOpen = true;
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    inputEl.textContent = '';
+    inputEl.classList.remove('sent');
+    sendEl.classList.remove('pulse');
+    hintEl.textContent = 'Sie können auch eigene Fragen stellen — der Chat öffnet sich gleich.';
+    setTimeout(() => typeQuestion(0), 480);
+  }
+
+  function typeQuestion(i) {
+    if (i <= QUESTION.length) {
+      inputEl.textContent = QUESTION.slice(0, i);
+      // jittered delay simulates real typing
+      const ch = QUESTION[i - 1] || '';
+      let delay = 28 + Math.random() * 42;
+      if (ch === ' ') delay += 30;            // pause at word boundary
+      if (',.?'.includes(ch)) delay += 110;   // punctuation pause
+      setTimeout(() => typeQuestion(i + 1), delay);
+    } else {
+      // typing done -> show sending state
+      setTimeout(() => {
+        inputEl.classList.add('sent');
+        sendEl.classList.add('pulse');
+        hintEl.textContent = 'Frage wird gesendet…';
+        setTimeout(() => {
+          window.location.href = 'chat.html?q=' + encodeURIComponent(QUESTION);
+        }, 720);
+      }, 360);
+    }
+  }
+
+  document.querySelectorAll('[data-chat-trigger]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      openChatModal();
+    });
+  });
+
+  // ESC closes the modal (only useful before redirect)
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modalOpen) {
+      overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
+      modalOpen = false;
+    }
+  });
+</script>
+</body>
+</html>
