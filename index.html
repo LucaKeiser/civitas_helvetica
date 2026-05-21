@@ -18,9 +18,7 @@
     <div class="brand-group">
       <a href="index.html" class="brand">
         <div class="brand-mark" aria-label="Vox Helvetica">
-          <svg viewBox="0 0 32 32" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17L29 17L29 30L3 30Z"/><path d="M1 17L6 10L26 10L31 17"/><path d="M10 12L22 12"/><path d="M13 1L23 3L20 12L10 10Z"/></g>
-          </svg>
+          <img src="vox-logo.png" alt="" aria-hidden="true" />
         </div>
         vox helvetica
       </a>
@@ -39,16 +37,14 @@
     <div class="nav-links">
       <a href="index.html" class="active">Start</a>
       <a href="chat.html">Demokratie im Dialog</a>
-      <a href="methodik.html">Methodik</a>
-      <a href="methodik.html#korpus">Korpus</a>
-      <a href="methodik.html#team">Team</a>
+      <a href="methodik.html">Methodik, Daten und Team</a>
     </div>
-    <a href="chat.html" class="nav-cta" data-chat-trigger>Chat starten →</a>
+    <a href="#" class="nav-cta">Anmelden</a>
   </div>
 </nav>
 
 <!-- ============================ HERO ============================ -->
-<header class="hero">
+<header class="hero reveal-stagger">
   <span class="eyebrow"><span class="dot dot-live"></span>Democracy Chatbot is live</span>
   <h1>150 Jahre Direkte&nbsp;Demokratie.<br /><span class="accent">Frag selbst.</span></h1>
   <p class="lede">
@@ -64,11 +60,21 @@
     <a class="btn-ghost" href="methodik.html">Methodik &amp; Korpus</a>
   </div>
 
+  <!-- Subtler Scroll-Hinweis am unteren Hero-Rand. Sitzt NICHT in der
+       reveal-stagger-Kaskade, damit er von Anfang an zentriert bleibt. -->
+  <div class="scroll-hint" id="scrollHint" aria-hidden="true">
+    <span class="scroll-hint-label">scrollen</span>
+    <svg class="scroll-hint-icon" width="18" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 13l5 5 5-5"/>
+      <path d="M7 6l5 5 5-5" opacity="0.45"/>
+    </svg>
+  </div>
+
 </header>
 
 <!-- ============================ STATS ============================ -->
 <section class="container">
-  <div class="stats">
+  <div class="stats reveal-stagger">
     <div class="stat"><div class="num">704</div><div class="label">eidg. Abstimmungen seit 1848</div></div>
     <div class="stat"><div class="num">2 252</div><div class="label">Gemeinden im Datensatz</div></div>
     <div class="stat"><div class="num">12 000+</div><div class="label">digitalisierte Quellendokumente</div></div>
@@ -78,13 +84,13 @@
 
 <!-- ============================ QUESTIONS ============================ -->
 <section class="section" id="fragen">
-  <div class="section-title section-title-centered">
+  <div class="section-title section-title-centered reveal">
     <span class="kicker">Beispielfragen</span>
     <h2>Was haben Sie schon immer über die Schweizer Demokratie wissen wollen?</h2>
     <p>Stellen Sie eigene Fragen oder beginnen Sie mit einer der folgenden — die Antwort kombiniert quantitative Daten, historischen Kontext und verlinkte Originalbelege.</p>
   </div>
 
-  <div class="cards" id="questionCards">
+  <div class="cards reveal-stagger" id="questionCards">
     <div class="card-q">
       <span class="q-tag">Gleichberechtigung</span>
       <div class="q-text">Wie hat die Schweiz historisch zu Fragen der Gleichberechtigung abgestimmt?</div>
@@ -135,13 +141,13 @@
 
 <!-- ============================ HOW IT WORKS ============================ -->
 <section class="section" id="funktion">
-  <div class="section-title section-title-centered">
+  <div class="section-title section-title-centered reveal">
     <span class="kicker">Wie es funktioniert</span>
     <h2>Ein Large Language Model auf einem geprüften Datenkorpus.</h2>
     <p>Die üblichen Risiken eines Chatbots werden reduziert: Jede Aussage ist belegt, jede Visualisierung reproduzierbar, jede Schlussfolgerung historiographisch eingebettet.</p>
   </div>
 
-  <div class="features">
+  <div class="features reveal-stagger">
     <div class="feature">
       <div class="icon">⚙</div>
       <h3>Retrieval auf kuratiertem Korpus</h3>
@@ -177,7 +183,7 @@
 
 <!-- ============================ MISSION ============================ -->
 <section class="container" id="mission">
-  <div class="mission">
+  <div class="mission reveal-blur">
     <div>
       <span class="eyebrow"><span class="dot"></span>Public Science</span>
       <h2 style="margin-top:18px;">Wissenschaft, die in die Gesellschaft zurückfliesst.</h2>
@@ -245,9 +251,7 @@
   <div class="chat-modal" role="dialog" aria-label="Chat öffnet">
     <div class="chat-modal-title">
       <div class="brand-mark-sm" aria-hidden="true">
-        <svg viewBox="0 0 32 32" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17L29 17L29 30L3 30Z"/><path d="M1 17L6 10L26 10L31 17"/><path d="M10 12L22 12"/><path d="M13 1L23 3L20 12L10 10Z"/></g>
-        </svg>
+        <img src="vox-logo.png" alt="" />
       </div>
       <span>vox helvetica publica wird gestartet…</span>
     </div>
@@ -267,16 +271,12 @@
     <div>
       <a href="index.html" class="brand" style="margin-bottom: 14px;">
         <div class="brand-mark" aria-label="Vox Helvetica">
-          <svg viewBox="0 0 32 32" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17L29 17L29 30L3 30Z"/><path d="M1 17L6 10L26 10L31 17"/><path d="M10 12L22 12"/><path d="M13 1L23 3L20 12L10 10Z"/></g>
-          </svg>
+          <img src="vox-logo.png" alt="" aria-hidden="true" />
         </div>
         vox helvetica
       </a>
       <p style="color: var(--text-muted); font-size: 13.5px; max-width: 360px; margin-top: 8px; line-height: 1.6;">
-        Eine Initiative des Lehrstuhls Sozialstrukturanalyse der Universität Basel
-        im Geiste einer Public Science. Ermöglicht durch grosszügige Unterstützung
-        durch die Christopher Merian Stiftung Basel.
+        Eine Initiative des Lehrstuhls Sozialstrukturanalyse der Universität Basel im Geiste einer Public Science. Ermöglicht durch grosszügige Unterstützung durch die Christoph Merian Stiftung Basel.
       </p>
     </div>
     <div>
@@ -382,6 +382,37 @@
       modalOpen = false;
     }
   });
+
+  // ---------- Scroll-Reveal (modern, sticky on scroll-back) ----------
+  (function () {
+    const revealEls = document.querySelectorAll('.reveal, .reveal-blur, .reveal-stagger');
+    if (!('IntersectionObserver' in window)) {
+      revealEls.forEach(el => el.classList.add('is-revealed'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          io.unobserve(entry.target); // stays revealed on scroll-back
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  })();
+
+  // ---------- Scroll-Hint: ausblenden sobald gescrollt wird ----------
+  (function () {
+    const hint = document.getElementById('scrollHint');
+    if (!hint) return;
+    function onScroll() {
+      if (window.scrollY > 40) {
+        hint.classList.add('is-hidden');
+        window.removeEventListener('scroll', onScroll);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
 </script>
 </body>
 </html>

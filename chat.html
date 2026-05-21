@@ -17,9 +17,7 @@
     <div class="brand-group">
       <a href="index.html" class="brand">
         <div class="brand-mark" aria-label="Vox Helvetica">
-          <svg viewBox="0 0 32 32" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17L29 17L29 30L3 30Z"/><path d="M1 17L6 10L26 10L31 17"/><path d="M10 12L22 12"/><path d="M13 1L23 3L20 12L10 10Z"/></g>
-          </svg>
+          <img src="vox-logo.png" alt="" aria-hidden="true" />
         </div>
         vox helvetica
       </a>
@@ -38,11 +36,9 @@
     <div class="nav-links">
       <a href="index.html">Start</a>
       <a href="chat.html" class="active">Demokratie im Dialog</a>
-      <a href="methodik.html">Methodik</a>
-      <a href="methodik.html#korpus">Korpus</a>
-      <a href="methodik.html#team">Team</a>
+      <a href="methodik.html">Methodik, Daten und Team</a>
     </div>
-    <a href="#" class="nav-cta">Anmelden</a>
+    <a href="#" class="nav-user" aria-label="Angemeldet als Johannes Truffer" title="Johannes Truffer">JT</a>
   </div>
 </nav>
 
@@ -75,7 +71,6 @@
     <div class="chat-header">
       <div>
         <div class="title">Wann zeigt sich erstmals der Röstigraben?</div>
-        <div class="meta">Vox Helvetica Modell · 14 zitierte Quellen · Vertrauensindex: hoch</div>
       </div>
       <div class="actions">
         <button class="icon-btn" title="Teilen">
@@ -111,7 +106,7 @@
         </div>
       </div>
       <div class="composer-hint">
-        Antworten werden auf Basis des Vox Helvetica Korpus generiert und mit Quellenangaben belegt. Beta-Version &mdash; bei Unsicherheiten konsultieren Sie die Originaldokumente.
+        Antworten werden auf Basis des Vox Helvetica Korpus generiert und mit Quellenangaben belegt. Beta-Version.
       </div>
     </div>
   </main>
@@ -2715,9 +2710,9 @@
         appendTextBeforeCursor(c);
         i++;
         if (i % 14 === 0) scrollStream();
-        const d = c === '\n' ? 4
-                : '.?!'.includes(c) ? baseSpeed + 130
-                : ',;:'.includes(c) ? baseSpeed + 60
+        const d = c === '\n' ? 2
+                : '.?!'.includes(c) ? baseSpeed + 70
+                : ',;:'.includes(c) ? baseSpeed + 30
                 : baseSpeed + Math.random() * baseSpeed;
         setTimeout(step, d);
       }
@@ -2731,11 +2726,50 @@
       ta.value = text.slice(0, i);
       ta.dispatchEvent(new Event('input', { bubbles: true }));
       const ch = text[i - 1] || '';
-      let d = 28 + Math.random() * 40;
-      if (ch === ' ') d += 20;
-      if (',.?!'.includes(ch)) d += 110;
+      let d = 18 + Math.random() * 26;
+      if (ch === ' ') d += 12;
+      if (',.?!'.includes(ch)) d += 70;
       await sleep(d);
     }
+  }
+
+  // Glow-Dauer der Trust-Card (muss zur CSS-Animation passen).
+  const TRUST_GLOW_DURATION = 1400;
+
+  // ---------- Trust-card single highlight (when Vertrauensindex updates) ----------
+  function blinkTrust() {
+    const card = document.getElementById('trustCard');
+    if (!card || card.classList.contains('collapsed')) return;
+    card.classList.remove('trust-blink');
+    void card.offsetWidth;             // restart animation
+    card.classList.add('trust-blink');
+    setTimeout(() => card.classList.remove('trust-blink'), TRUST_GLOW_DURATION + 50);
+  }
+
+  // ---------- Composer single highlight ----------
+  function pulseComposer() {
+    const composer = document.querySelector('.composer');
+    if (!composer) return;
+    composer.classList.remove('composer-glow');
+    void composer.offsetWidth;
+    composer.classList.add('composer-glow');
+    setTimeout(() => composer.classList.remove('composer-glow'), 2700);
+  }
+
+  // ---------- After-answer attention sequence:
+  //   1. Trust-Karte glüht einmal sauber auf (kein Nach-Blink)
+  //   2. Parallel läuft das Update der Karte (Counter + Note-Typing)
+  //   3. 2 Sekunden NACH Ende der gesamten Index-Animation pulst der Composer.
+  //   Wird NICHT nach der letzten Antwort (state === 'five') aufgerufen.
+  async function flagAnswerFinished() {
+    blinkTrust();
+    // warte bis BEIDES vorbei ist: das Glow UND das Counter-/Typing-Update
+    await Promise.all([
+      new Promise(r => setTimeout(r, TRUST_GLOW_DURATION)),
+      _trustDonePromise
+    ]);
+    // dann 2-Sekunden-Pause, dann Composer aufleuchten
+    setTimeout(pulseComposer, 2000);
   }
 
   // ---------- Message builders ----------
@@ -2760,9 +2794,7 @@
     wrap.className = 'msg assistant';
     wrap.innerHTML = `
       <div class="avatar" aria-label="Vox Helvetica">
-        <svg viewBox="0 0 32 32" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17L29 17L29 30L3 30Z"/><path d="M1 17L6 10L26 10L31 17"/><path d="M10 12L22 12"/><path d="M13 1L23 3L20 12L10 10Z"/></g>
-        </svg>
+        <img src="vox-logo.png" alt="" aria-hidden="true" />
       </div>
       <div class="bubble">
         <div class="name">vox helvetica publica</div>
@@ -2810,24 +2842,88 @@
   // ============================================================
   // Vertrauensindex — slight, smoothly-animated update after each answer
   // ============================================================
+  // Token used to abort an in-flight trust-note typer when a new update arrives.
+  let _trustNoteToken = 0;
+  let _trustInitialized = false;
+  // Promise resolves when the *entire* visual update of the Vertrauensindex
+  // (count + fade + typing) has finished. Used to time the composer glow.
+  let _trustDonePromise = Promise.resolve();
+
   function updateTrust(value, sources, note) {
     const bar  = document.getElementById('trustBarFill');
     const val  = document.getElementById('trustValue');
     const txt  = document.getElementById('trustNote');
-    if (!bar || !val || !txt) return;
-    // Briefly fade the note while values morph
-    txt.style.opacity = '0';
-    setTimeout(() => {
-      bar.style.width = value + '%';
-      val.textContent = value + ' %';
-      // Recolour the percentage label based on confidence band
-      const c = value >= 85 ? 'var(--success)'
-              : value >= 78 ? 'var(--accent)'
-              : '#e8b150';
-      val.style.color = c;
-      txt.textContent = `Antwort gestützt auf ${sources} unabhängige Quellen aus 4 Datenklassen. ${note}`;
-      txt.style.opacity = '1';
-    }, 220);
+    if (!bar || !val || !txt) { _trustDonePromise = Promise.resolve(); return _trustDonePromise; }
+
+    const fullNote = `Antwort gestützt auf ${sources} unabhängige Quellen aus 4 Datenklassen. ${note}`;
+    const finalColor = value >= 85 ? 'var(--success)'
+                     : value >= 78 ? 'var(--accent)'
+                     : '#e8b150';
+
+    // FIRST call: just show the final values (card is fading in alongside).
+    if (!_trustInitialized) {
+      _trustInitialized = true;
+      bar.style.width    = value + '%';
+      val.textContent    = value + ' %';
+      val.style.color    = finalColor;
+      txt.textContent    = fullNote;
+      txt.style.opacity  = '1';
+      _trustDonePromise = Promise.resolve();
+      return _trustDonePromise;
+    }
+
+    // SUBSEQUENT updates: smooth count-up + note fade-out → re-type sequence.
+    const myToken = ++_trustNoteToken;
+    bar.style.width = value + '%';
+
+    _trustDonePromise = new Promise(resolve => {
+      const oldVal = parseInt(val.textContent, 10) || 0;
+      const newVal = value;
+      const startT = performance.now();
+      const DURATION = 900;
+      function tick(now) {
+        const p = Math.min(1, (now - startT) / DURATION);
+        const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        const cur = Math.round(oldVal + (newVal - oldVal) * eased);
+        val.textContent = cur + ' %';
+        if (p < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          val.textContent = newVal + ' %';
+          val.style.color = finalColor;
+          txt.style.opacity = '0';
+          setTimeout(() => {
+            if (myToken !== _trustNoteToken) { resolve(); return; }
+            txt.textContent = '';
+            txt.style.opacity = '1';
+            typeTrustNote(txt, fullNote, myToken).then(resolve);
+          }, 360);
+        }
+      }
+      requestAnimationFrame(tick);
+    });
+    return _trustDonePromise;
+  }
+
+  // Character-by-character typer for the Vertrauensindex note. Returns a Promise
+  // that resolves when typing is complete (or aborted).
+  function typeTrustNote(target, text, token) {
+    return new Promise(resolve => {
+      let i = 0;
+      function step() {
+        if (token !== _trustNoteToken) { resolve(); return; }     // aborted
+        if (i > text.length) { resolve(); return; }
+        target.textContent = text.slice(0, i);
+        const ch = text[i - 1] || '';
+        i++;
+        let d = 7 + Math.random() * 8;
+        if ('.!?'.includes(ch)) d += 80;
+        else if (',;:'.includes(ch)) d += 35;
+        else if (ch === ' ') d += 4;
+        setTimeout(step, d);
+      }
+      step();
+    });
   }
 
   // ============================================================
@@ -2849,7 +2945,7 @@
     const seg1 = document.createElement('div');
     seg1.className = 'streaming-seg';
     textEl.appendChild(seg1);
-    await typeHtml(seg1, FIRST_INTRO_HTML, 10);
+    await typeHtml(seg1, FIRST_INTRO_HTML, 5);
 
     // Graphic loading animation
     await sleep(220);
@@ -2872,7 +2968,7 @@
     const seg2a = document.createElement('div');
     seg2a.className = 'streaming-seg';
     textEl.appendChild(seg2a);
-    await typeHtml(seg2a, FIRST_REST_PART1, 10);
+    await typeHtml(seg2a, FIRST_REST_PART1, 5);
 
     // Trigger phrase "Wasserscheide des modernen Röstigrabens" was just typed.
     // Drop in a small inline loader, fade in the canton map in the right panel,
@@ -2902,7 +2998,7 @@
     const seg2b = document.createElement('div');
     seg2b.className = 'streaming-seg';
     textEl.appendChild(seg2b);
-    await typeHtml(seg2b, FIRST_REST_PART2, 10);
+    await typeHtml(seg2b, FIRST_REST_PART2, 5);
 
     // Sources at the end
     await sleep(260);
@@ -2920,6 +3016,7 @@
     revealContextCards();
     updateTrust(94, 7, 'Hohe Übereinstimmung zwischen Primärdaten und Sekundärliteratur.');
     saveDemoState('first');
+    flagAnswerFinished();
   }
 
   // ============================================================
@@ -2944,12 +3041,13 @@
 
     const textEl = thinking.querySelector('.text');
     textEl.innerHTML = '';
-    await typeHtml(textEl, FOLLOWUP_A_HTML, 11);
+    await typeHtml(textEl, FOLLOWUP_A_HTML, 6);
     scrollStream();
     ta.removeAttribute('readonly');
     ta.setAttribute('placeholder', FINAL_PLACEHOLDER);
     updateTrust(83, 11, 'Subkohorte n=67 — methodisch komplex, einzelne Studien widersprechen sich.');
     saveDemoState('both');
+    flagAnswerFinished();
     // Chain: next composer click opens the visualization demo
     bindVisualizationTrigger(ta);
   }
@@ -3249,7 +3347,7 @@
     const seg1 = document.createElement('div');
     seg1.className = 'streaming-seg';
     textEl.appendChild(seg1);
-    await typeHtml(seg1, THIRD_INTRO_HTML, 11);
+    await typeHtml(seg1, THIRD_INTRO_HTML, 6);
 
     // Loader for the heatmap-table
     await sleep(220);
@@ -3291,13 +3389,14 @@
     const seg2 = document.createElement('div');
     seg2.className = 'streaming-seg';
     textEl.appendChild(seg2);
-    await typeHtml(seg2, THIRD_REST_HTML, 11);
+    await typeHtml(seg2, THIRD_REST_HTML, 6);
 
     scrollStream();
     ta.removeAttribute('readonly');
     ta.setAttribute('placeholder', FINAL_PLACEHOLDER);
     updateTrust(92, 14, 'Synthese über alle 704 Vorlagen — gute Replikation, Aggregateffekt robust.');
     saveDemoState('three');
+    flagAnswerFinished();
     // Chain: next composer click opens the animated Swiss-map demo
     bindAnimatedMapTrigger(ta);
   }
@@ -3349,7 +3448,7 @@
     const seg1 = document.createElement('div');
     seg1.className = 'streaming-seg';
     textEl.appendChild(seg1);
-    await typeHtml(seg1, FOURTH_INTRO_HTML, 11);
+    await typeHtml(seg1, FOURTH_INTRO_HTML, 6);
 
     // Loader
     await sleep(220);
@@ -3382,13 +3481,14 @@
     const seg2 = document.createElement('div');
     seg2.className = 'streaming-seg';
     textEl.appendChild(seg2);
-    await typeHtml(seg2, FOURTH_REST_HTML, 11);
+    await typeHtml(seg2, FOURTH_REST_HTML, 6);
 
     scrollStream();
     ta.removeAttribute('readonly');
     ta.setAttribute('placeholder', FINAL_PLACEHOLDER);
     updateTrust(75, 17, 'Räumliche Inferenz auf Mikro-Ebene — extrapolierte Werte, Einzelgemeinden statistisch schwach gestützt.');
     saveDemoState('four');
+    flagAnswerFinished();
     // Chain: next composer click opens the ecological-fallacy critique
     bindEcoFallacyTrigger(ta);
   }
@@ -3497,7 +3597,7 @@
     const seg1 = document.createElement('div');
     seg1.className = 'streaming-seg';
     textEl.appendChild(seg1);
-    await typeHtml(seg1, FIFTH_INTRO_HTML, 11);
+    await typeHtml(seg1, FIFTH_INTRO_HTML, 6);
 
     // Loader for the regression coefficient plot
     await sleep(220);
@@ -3529,7 +3629,7 @@
     const seg2 = document.createElement('div');
     seg2.className = 'streaming-seg';
     textEl.appendChild(seg2);
-    await typeHtml(seg2, FIFTH_REST_HTML, 11);
+    await typeHtml(seg2, FIFTH_REST_HTML, 6);
 
     scrollStream();
     ta.removeAttribute('readonly');
@@ -3588,9 +3688,9 @@
   // (sessionStorage: persists within the browser tab, clears on close)
   // ============================================================
   const STORE = {
-    state: 'voxchat-state-v12',
-    html:  'voxchat-html-v12',
-    ph:    'voxchat-placeholder-v12'
+    state: 'voxchat-state-v21',
+    html:  'voxchat-html-v21',
+    ph:    'voxchat-placeholder-v21'
   };
   function safeStore() {
     try { return window.sessionStorage; } catch (_) { return null; }
