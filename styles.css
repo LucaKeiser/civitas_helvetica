@@ -125,7 +125,7 @@ body {
   margin-left: 4px;
 }
 
-/* Brand group: vox helvetica | Uni Basel | CMS — left-aligned, slim dividers between */
+/* Brand group: civitas helvetica | Uni Basel | CMS — left-aligned, slim dividers between */
 .brand-group {
   display: flex;
   align-items: center;
@@ -1057,7 +1057,7 @@ body {
   .method-grid { width: calc(100% - 48px); max-width: 100%; }
 }
 /* TOC: fixed to the LEFT edge of the viewport, hidden until the first
-   heading ("Der Vox Helvetica Korpus") scrolls up to the top. */
+   heading ("Der civitas helvetica Korpus") scrolls up to the top. */
 .method-toc {
   position: fixed;
   left: 16px;
