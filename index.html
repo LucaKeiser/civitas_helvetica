@@ -312,10 +312,13 @@
       const rect = card.getBoundingClientRect();
       card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
     });
+    
+    // DER CLICK-TEIL WURDE ENTFERNT, UM WEITERLEITUNG ZU VERHINDERN
+    /* 
     card.addEventListener('click', () => {
-      // Pilot-Demo: alle Beispielkarten führen zur einen verfügbaren Analyse
       window.location.href = 'chat.html?q=' + encodeURIComponent(QUESTION) + '&autosubmit=1';
     });
+    */
   });
 
   // ---------- Chat-opening modal with typing animation ----------
