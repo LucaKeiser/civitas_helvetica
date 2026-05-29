@@ -314,16 +314,13 @@
 
 <script>
   // ---------- Mouse-follow glow on cards ----------
-  document.querySelectorAll('.card-q').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
-    });
-    card.addEventListener('click', () => {
-      const q = card.querySelector('.q-text').textContent;
-      window.location.href = `chat.html?q=${encodeURIComponent(q)}`;
-    });
+document.querySelectorAll('.card-q').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
   });
+  // click-Listener wurde entfernt
+});
 
   // ---------- Chat-opening modal with typing animation ----------
   const overlay   = document.getElementById('chatModalOverlay');
