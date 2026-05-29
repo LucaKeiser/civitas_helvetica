@@ -125,7 +125,7 @@ body {
   margin-left: 4px;
 }
 
-/* Brand group: civitas helvetica | Uni Basel | CMS — left-aligned, slim dividers between */
+/* Brand group: civitas helvetica | Uni Basel | */
 .brand-group {
   display: flex;
   align-items: center;
@@ -144,41 +144,6 @@ body {
 .brand-unibas:hover { opacity: 0.78; }
 .brand-unibas img { display: block; height: 22px; width: auto; }
 
-.brand-cms {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  transition: opacity 0.15s;
-}
-.brand-cms:hover { opacity: 0.78; }
-.brand-cms .cms-logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.0;
-  align-items: flex-start;
-  gap: 2px;
-}
-.brand-cms .cms-mark {
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--text);
-  letter-spacing: -0.01em;
-  margin: 0;
-  font-family: var(--font-sans);
-}
-.brand-cms .cms-name {
-  font-size: 9.5px;
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin: 0;
-  font-weight: 500;
-}
-@media (max-width: 1100px) {
-  .brand-cms .cms-name { display: none; }
-  .brand-group { gap: 10px; }
-}
 .nav-links {
   display: flex;
   align-items: center;
