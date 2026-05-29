@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kapitalfreundlichkeit der Schweizer Gemeinden · civitas helvetica publica</title>
+<title>Chat · vox helvetica publica</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -16,14 +16,21 @@
   <div class="nav-inner">
     <div class="brand-group">
       <a href="index.html" class="brand">
-        <div class="brand-mark" aria-label="Civitas Helvetica">
-          <img src="civitas-logo.png" alt="" aria-hidden="true" />
+        <div class="brand-mark" aria-label="Vox Helvetica">
+          <img src="vox-logo.png" alt="" aria-hidden="true" />
         </div>
-        civitas helvetica
+        vox helvetica
       </a>
       <span class="brand-divider"></span>
       <a class="brand-unibas" href="https://soziologie.philhist.unibas.ch/de/personen/oliver-nachtwey/" target="_blank" rel="noopener" aria-label="Universität Basel">
         <img src="unibas-logo.svg" alt="Universität Basel" />
+      </a>
+      <span class="brand-divider"></span>
+      <a class="brand-cms" href="https://www.cms-basel.ch/" target="_blank" rel="noopener" aria-label="Christoph Merian Stiftung">
+        <span class="cms-logo">
+          <p class="cms-mark">cms</p>
+          <p class="cms-name">Christoph Merian Stiftung</p>
+        </span>
       </a>
     </div>
     <div class="nav-links">
@@ -47,7 +54,15 @@
 
     <div class="sidebar-section">
       <h4>Letzte Konversationen</h4>
-      <div class="sidebar-item active"><span class="ico">💬</span>Kapitalfreundlichkeit aller Schweizer Gemeinden im Zeitvergleich</div>
+      <div class="sidebar-item active"><span class="ico">💬</span>Wann zeigt sich erstmals der Röstigraben?</div>
+      <div class="sidebar-item"><span class="ico">💬</span>Wie hat die Schweiz zu Gleichberechtigung abgestimmt?</div>
+      <div class="sidebar-item"><span class="ico">💬</span>Wie stimmte meine Gemeinde zu Migrationsvorlagen?</div>
+      <div class="sidebar-item"><span class="ico">💬</span>Welche Gemeinden lehnten 1971 das Frauenstimmrecht ab?</div>
+      <div class="sidebar-item"><span class="ico">💬</span>Was war der Kontext der AHV-Einführung?</div>
+      <div class="sidebar-item"><span class="ico">💬</span>Welche Literatur empfiehlst du zur Vertiefung?</div>
+      <div class="sidebar-item"><span class="ico">💬</span>EWR-Abstimmung 1992 — Folgen</div>
+      <div class="sidebar-item"><span class="ico">💬</span>Konkordanz nach Krisenjahren</div>
+      <div class="sidebar-item"><span class="ico">💬</span>Stimmbeteiligung 1971–2024</div>
     </div>
   </aside>
 
@@ -55,7 +70,7 @@
   <main class="chat-main">
     <div class="chat-header">
       <div>
-        <div class="title">Kapitalfreundlichkeit aller Schweizer Gemeinden im Zeitvergleich</div>
+        <div class="title">Wann zeigt sich erstmals der Röstigraben?</div>
       </div>
       <div class="actions">
         <button class="icon-btn" title="Teilen">
@@ -71,7 +86,7 @@
     </div>
 
     <div class="chat-stream">
-      <div class="chat-stream-inner" id="chatStream"><!-- populated by cleavage_app.js --></div>
+      <div class="chat-stream-inner" id="chatStream"><!-- populated by runFirstAnswer() --></div>
     </div>
 
     <!-- COMPOSER -->
@@ -91,7 +106,7 @@
         </div>
       </div>
       <div class="composer-hint">
-        Antworten werden auf Basis des Civitas Helvetica Korpus generiert und mit Quellenangaben belegt. Beta-Version.
+        Antworten werden auf Basis des Vox Helvetica Korpus generiert und mit Quellenangaben belegt. Beta-Version.
       </div>
     </div>
   </main>
@@ -101,9 +116,9 @@
 
     <!-- Schweiz-Karte: inline Choropleth (offline-fähig, Geometrie generalisiert) -->
     <div class="ctx-card collapsed" id="mapCard">
-      <h5>Kapitalfreundlichkeits-Index 1848&ndash;2026 <span class="ctx-tag">choropleth</span></h5>
+      <h5>Kantonskarte: EWR 1992 <span class="ctx-tag">choropleth</span></h5>
       <div class="swiss-map-wrap" id="swissMap">
-        <svg viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-label="Schweizer Gemeindekarte Kapitalfreundlichkeits-Index">
+        <svg viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-label="Schweizer Gemeindekarte EWR 1992">
   <defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur in="SourceAlpha" stdDeviation="2"/><feOffset dx="0" dy="2" result="off"/><feComponentTransfer><feFuncA type="linear" slope="0.30"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
   <path class="country-outline" d="M791,230L797,233L799,230L807,229L815,235L829,236L840,243L845,240L849,240L847,244L852,250L848,258L849,267L862,273L871,272L874,276L880,276L887,284L887,288L895,288L899,294L902,292L912,291L917,286L925,286L924,277L926,266L938,269L942,267L940,260L944,258L948,247L953,246L956,243L959,244L965,251L964,255L979,262L978,269L974,278L975,293L973,295L972,303L966,308L971,313L971,319L962,325L966,330L966,333L959,341L964,355L973,353L983,361L980,383L977,384L976,387L968,381L964,384L954,380L951,385L948,382L942,383L940,376L936,374L933,376L931,374L930,370L934,364L929,357L924,363L919,360L906,367L900,365L900,374L896,377L897,380L889,387L891,393L889,397L889,406L892,411L889,416L898,424L908,420L911,421L913,426L915,425L916,434L908,437L909,442L904,445L904,451L907,457L915,463L920,473L914,482L903,483L898,487L892,483L895,477L894,472L881,467L882,458L877,455L881,446L874,442L872,438L867,439L865,442L861,438L853,444L846,444L834,453L825,448L822,451L823,454L821,456L823,460L821,466L815,466L813,463L805,468L801,468L799,466L792,466L788,463L786,464L783,462L774,445L766,442L768,438L764,428L766,413L766,410L763,408L765,408L766,401L759,404L755,414L746,407L746,403L744,401L727,406L726,410L726,417L720,421L720,425L727,431L727,445L728,448L731,449L730,456L732,458L728,463L729,467L722,476L722,487L716,488L716,493L712,495L708,507L704,507L695,518L685,523L689,533L686,540L675,544L672,548L676,562L669,566L668,569L673,572L675,582L683,584L687,587L687,591L690,590L685,598L683,599L678,615L670,615L671,611L668,610L665,612L662,609L652,613L653,609L659,601L657,600L652,586L647,581L647,573L642,573L634,564L624,564L628,554L633,551L634,547L633,546L636,546L638,542L638,537L628,530L623,532L618,530L614,523L608,531L596,527L594,523L586,524L586,520L582,517L584,514L578,511L576,505L570,501L569,494L555,490L554,486L550,485L552,480L546,470L554,459L553,453L555,450L553,443L555,440L552,431L554,425L549,419L532,423L524,431L520,431L516,436L522,439L521,446L515,450L511,450L511,456L502,459L500,467L497,469L489,471L484,470L473,481L472,484L478,486L479,490L484,493L490,506L487,513L488,517L486,520L480,522L478,528L462,532L460,541L463,549L458,553L458,559L455,559L453,564L436,564L432,570L429,571L430,574L427,583L429,586L426,589L417,586L412,589L406,583L401,581L398,587L395,587L392,583L393,579L386,576L383,571L367,572L365,568L359,567L357,577L348,575L342,580L342,584L336,584L332,589L327,591L323,595L314,589L310,591L304,587L295,598L294,596L287,598L282,606L278,605L273,600L266,607L262,607L261,601L250,587L248,577L242,572L245,569L243,564L237,561L236,557L230,547L227,546L227,543L224,543L217,550L214,548L215,541L217,540L215,534L219,525L206,522L201,523L197,521L196,512L201,507L199,500L203,491L210,484L212,476L211,473L204,470L202,466L198,464L192,453L200,446L199,442L203,431L173,422L139,421L119,434L99,437L82,450L74,465L80,468L81,472L78,476L84,485L90,480L90,483L93,483L90,492L74,499L67,505L67,510L55,517L48,516L46,514L37,514L34,519L25,516L17,521L26,504L19,500L21,494L25,494L25,492L27,492L34,487L37,489L40,485L42,486L46,485L49,488L54,484L49,473L53,469L53,465L57,456L64,448L62,444L60,445L49,435L42,432L46,424L44,417L62,393L52,383L78,361L87,351L108,338L108,337L111,336L113,331L121,329L126,323L127,319L122,315L121,311L128,299L129,287L122,276L136,262L138,264L157,256L162,257L166,253L170,246L183,239L177,234L180,231L180,229L188,226L188,220L201,214L211,206L213,203L209,202L216,197L217,193L233,180L230,166L242,163L246,158L245,155L252,154L255,152L256,149L253,148L253,143L246,140L237,144L222,144L218,146L218,140L224,136L225,130L230,129L230,121L234,121L237,117L243,115L239,103L243,101L248,99L259,104L270,100L277,104L285,103L280,111L279,118L284,121L291,120L294,125L302,121L312,119L317,121L327,121L338,109L331,107L333,102L342,107L348,104L350,100L347,94L348,96L352,96L354,92L351,90L348,92L347,89L359,81L361,77L365,77L366,73L369,75L369,77L372,77L378,71L384,72L388,70L383,74L387,79L386,80L386,79L384,81L375,82L383,90L387,91L409,83L415,73L419,75L429,74L433,79L433,85L440,87L443,82L456,85L466,80L470,82L475,75L486,71L495,63L497,64L499,68L505,64L512,66L514,72L520,78L532,79L535,76L543,79L555,74L554,72L549,73L547,68L552,64L558,63L559,58L568,61L571,65L569,68L573,69L578,64L576,55L578,52L580,55L577,56L580,56L583,52L578,46L572,49L568,47L564,48L564,51L561,50L562,54L554,54L554,56L550,53L550,57L549,51L544,52L537,48L536,46L539,43L536,38L538,35L546,31L545,25L553,15L557,14L559,16L566,11L568,13L571,12L568,9L569,4L571,7L580,7L580,17L583,19L587,15L585,9L588,6L588,9L593,10L595,20L600,17L605,21L602,23L599,28L605,32L603,39L617,44L618,40L620,39L616,35L612,35L612,31L618,28L617,26L619,25L620,27L619,29L623,31L622,33L633,35L634,38L629,37L629,42L633,46L634,50L638,52L648,50L664,40L680,42L689,46L691,45L697,49L713,47L753,66L769,84L776,84L778,96L786,106L788,104L791,108L799,109L796,115L798,124L802,127L803,131L799,135L792,136L788,142L785,151L773,166L765,194L773,218L772,222L763,230L764,233L777,229L782,234ZM663,572L665,572L666,569L665,565L663,565L661,571ZM601,40L597,32L594,34L590,33L592,38L589,40L590,41L595,38Z" fill="#11151a" stroke="rgba(255,255,255,0.10)" stroke-width="0.6"/>
   <g class="communes">
@@ -2285,66 +2300,61 @@
         <div class="tooltip" id="mapTooltip"></div>
       </div>
       <div class="legend">
-        <span>kapitalfeindlicher</span>
-        <div class="legend-bar legend-bar-diverging"></div>
-        <span>kapitalfreundlicher</span>
+        <span>Nein</span>
+        <div class="legend-bar"></div>
+        <span>Ja</span>
       </div>
       <div style="font-size: 11px; color: var(--text-dim); margin-top: 8px; line-height: 1.45;">
-        Pro Gemeinde gewichtetes Mittel der Abweichung vom CH-Schnitt über alle 704 Vorlagen 1848&ndash;2026, gewichtet mit der LLM-Kapitalfreundlichkeit der Vorlage (Pilotversuch 1.2). Geometrie: BFS ThemaKart, Stand 2023.
+        Quelle: BFS Abstimmungsstatistik 06.12.1992 · Geometrie: <em>BFS ThemaKart — historisierte
+        administrative Grenzen G1, Stand 2026-01-01, CH1903+/LV95</em>, Douglas-Peucker-vereinfacht.
       </div>
     </div>
 
-    <!-- Vertrauensindex (wird im Verlauf der Antwort schrittweise aktualisiert) -->
+    <!-- Vertrauensindex (oberhalb der Originalquellen, wird nach jeder Antwort aktualisiert) -->
     <div class="ctx-card collapsed" id="trustCard">
       <h5>Vertrauensindex</h5>
       <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 12px;">
         <div style="flex: 1; height: 6px; background: var(--bg-elev); border-radius: 3px; overflow: hidden;">
-          <div id="trustBarFill" style="width: 0%; height: 100%; background: linear-gradient(to right, var(--accent), var(--success)); transition: width 0.9s cubic-bezier(.3,.7,.4,1);"></div>
+          <div id="trustBarFill" style="width: 86%; height: 100%; background: linear-gradient(to right, var(--accent), var(--success)); transition: width 0.9s cubic-bezier(.3,.7,.4,1);"></div>
         </div>
-        <span id="trustValue" style="font-family: var(--font-mono); font-size: 13px; color: var(--success); font-weight: 600; transition: color 0.5s ease;">—</span>
+        <span id="trustValue" style="font-family: var(--font-mono); font-size: 13px; color: var(--success); font-weight: 600; transition: color 0.5s ease;">86 %</span>
       </div>
       <p id="trustNote" style="font-size: 12.5px; color: var(--text-muted); line-height: 1.55; transition: opacity 0.3s ease;">
-        Wartet auf Antwort.
+        Antwort gestützt auf 7 unabhängige Quellen aus 4 Datenklassen.
+        Hohe Übereinstimmung zwischen Primärdaten und Sekundärliteratur.
       </p>
     </div>
 
     <!-- Originalquellen -->
     <div class="ctx-card collapsed" id="sourcesCard">
-      <h5>Originalquellen <span class="ctx-tag" id="sourcesCount">6</span></h5>
-      <div class="source-list" id="sourcesList">
+      <h5>Originalquellen <span class="ctx-tag">10</span></h5>
+      <div class="source-list">
         <div class="source-item">
           <div class="src-num">1</div>
           <div>
-            Goldberg, A. C. &amp; Mantegazzi, D. (2026). <em>Replikationsdaten zu den geographischen Mustern eidgenössischer Volksabstimmungen, 1866&ndash;2023.</em>
-            <div class="src-meta">Harvard Dataverse · Gemeinde-Panel mun2023</div>
+            Kriesi, H. (1995). <em>Le clivage linguistique. Problèmes de compréhension entre les communautés linguistiques.</em>
+            <div class="src-meta">Bern: BFS · Zitiert 213 ×</div>
           </div>
         </div>
         <div class="source-item">
           <div class="src-num">2</div>
           <div>
-            Année Politique Suisse, Universität Bern (2026). <em>Swissvotes DATASET, 1848&ndash;2026.</em>
-            <div class="src-meta">CC-BY 4.0 · Inhaltsvariablen für 708 Vorlagen</div>
-          </div>
-        </div>
-        <div class="source-item">
-          <div class="src-num">3</div>
-          <div>
-            Bundeskanzlei / VoteInfo OGD (2026). <em>Eidgenössische Abstimmungsresultate auf Gemeindeebene, 2024&ndash;2026.</em>
-            <div class="src-meta">Live-API · ergänzt das Dataverse-Panel</div>
+            BFS, Abstimmungsstatistik: <em>Militärorganisation 1895</em>
+            <div class="src-meta">Primärdaten · Gemeindeebene</div>
           </div>
         </div>
         <div class="source-item">
           <div class="src-num">4</div>
           <div>
-            Lipset, S. M. &amp; Rokkan, S. (1967). <em>Cleavage Structures, Party Systems, and Voter Alignments.</em>
-            <div class="src-meta">Theoretischer Rahmen · Kapital-Arbeit-Cleavage</div>
+            Sciarini, P. &amp; Listhaug, O. (1997). <em>Single Cases or a Unique Pair? The Swiss and Norwegian No to Europe.</em>
+            <div class="src-meta">Journal of Common Market Studies</div>
           </div>
         </div>
         <div class="source-item">
-          <div class="src-num">5</div>
+          <div class="src-num">10</div>
           <div>
-            Benoit, K., Ma, J. &amp; De Marchi, S. (2025). <em>Using Large Language Models to Analyze Political Texts Through Natural Language Understanding.</em>
-            <div class="src-meta">American Journal of Political Science · zweistufiger LLM-Workflow</div>
+            Bundesrat (1992): <em>Abstimmungsbüchlein EWR-Beitritt</em>
+            <div class="src-meta">PDF · Faksimile · Plakatsammlung</div>
           </div>
         </div>
       </div>
@@ -2353,7 +2363,1476 @@
   </aside>
 </div>
 
-<script src="data/cleavage_bundle_v1.js"></script>
-<script src="cleavage_app.js"></script>
+<script>
+  // ---------- Composer ergonomics ----------
+  const composerTA = document.querySelector('.composer textarea');
+  if (composerTA) {
+    composerTA.addEventListener('input', () => {
+      composerTA.style.height = 'auto';
+      composerTA.style.height = Math.min(composerTA.scrollHeight, 140) + 'px';
+    });
+  }
+  document.querySelectorAll('.cite').forEach(c => {
+    c.addEventListener('mouseenter', () => {
+      const n = c.textContent.trim();
+      document.querySelectorAll('.source-item').forEach(s => {
+        s.style.borderColor = s.querySelector('.src-num').textContent.trim() === n ? 'var(--accent)' : '';
+      });
+    });
+  });
+
+  // ============================================================
+  // Timeline hover — show year + Δ value at the nearest data point
+  // ============================================================
+  const TIMELINE_DATA = [
+    {x:40, y:108, year:1880, value:-4},
+    {x:60, y:112, year:1884, value:-6},
+    {x:80, y: 98, year:1889, value: 1},
+    {x:100,y: 72, year:1893, value:14},
+    {x:120,y: 80, year:1897, value:10},
+    {x:140,y: 92, year:1902, value: 4},
+    {x:160,y:108, year:1906, value:-4},
+    {x:180,y:118, year:1910, value:-9},
+    {x:200,y:114, year:1915, value:-7},
+    {x:220,y:108, year:1919, value:-4},
+    {x:240,y: 98, year:1924, value: 1},
+    {x:260,y: 80, year:1928, value:10},
+    {x:280,y: 76, year:1932, value:12},
+    {x:300,y: 68, year:1937, value:16},
+    {x:320,y: 72, year:1941, value:14},
+    {x:340,y: 82, year:1945, value: 9},
+    {x:360,y: 90, year:1950, value: 5},
+    {x:380,y: 88, year:1954, value: 6},
+    {x:400,y: 80, year:1958, value:10},
+    {x:420,y: 74, year:1963, value:13},
+    {x:440,y: 64, year:1967, value:18},
+    {x:460,y: 52, year:1971, value:24},
+    {x:480,y: 58, year:1976, value:21},
+    {x:500,y: 66, year:1980, value:17},
+    {x:520,y: 74, year:1985, value:13},
+    {x:540,y: 68, year:1989, value:16},
+    {x:560,y: 60, year:1993, value:20},
+    {x:580,y: 54, year:1998, value:23},
+    {x:600,y: 52, year:2002, value:24},
+    {x:620,y: 46, year:2006, value:27},
+    {x:640,y: 48, year:2010, value:26},
+    {x:660,y: 42, year:2015, value:29},
+    {x:680,y: 38, year:2019, value:31},
+    {x:700,y: 42, year:2024, value:29},
+  ];
+  function setupTimelineHover() {
+    const svg = document.querySelector('.timeline-svg');
+    if (!svg) return;
+    // Idempotent: clean any leftover hover layer (from a previous install
+    // or from a restored innerHTML snapshot whose listeners are gone)
+    svg.removeAttribute('data-hover-installed');
+    svg.querySelectorAll('.hit, .tl-hover').forEach(el => el.remove());
+    svg.dataset.hoverInstalled = '1';
+    const SVGNS = 'http://www.w3.org/2000/svg';
+
+    // Hit-test rectangle for mouse events
+    const hit = document.createElementNS(SVGNS, 'rect');
+    hit.setAttribute('class', 'hit');
+    hit.setAttribute('x', 40); hit.setAttribute('y', 40);
+    hit.setAttribute('width', 660); hit.setAttribute('height', 130);
+    hit.setAttribute('fill', 'transparent');
+    svg.appendChild(hit);
+
+    // Hover layer (line, dot, label) — initially hidden
+    const g = document.createElementNS(SVGNS, 'g');
+    g.setAttribute('class', 'tl-hover');
+    g.style.display = 'none';
+    g.innerHTML = `
+      <line class="tl-line" x1="0" x2="0" y1="40" y2="170"/>
+      <rect class="tl-label-bg" rx="4" ry="4" width="76" height="30"/>
+      <circle class="tl-dot" r="4"/>
+      <text class="tl-label-year" text-anchor="middle"></text>
+      <text class="tl-label-value" text-anchor="middle"></text>
+    `;
+    svg.appendChild(g);
+
+    const line       = g.querySelector('.tl-line');
+    const dot        = g.querySelector('.tl-dot');
+    const labelBg    = g.querySelector('.tl-label-bg');
+    const labelYear  = g.querySelector('.tl-label-year');
+    const labelValue = g.querySelector('.tl-label-value');
+
+    function update(e) {
+      const pt = svg.createSVGPoint();
+      pt.x = e.clientX; pt.y = e.clientY;
+      const loc = pt.matrixTransform(svg.getScreenCTM().inverse());
+      // Nearest data point in x
+      let nearest = TIMELINE_DATA[0], best = Math.abs(nearest.x - loc.x);
+      for (const p of TIMELINE_DATA) {
+        const d = Math.abs(p.x - loc.x);
+        if (d < best) { best = d; nearest = p; }
+      }
+      g.style.display = 'block';
+      line.setAttribute('x1', nearest.x);
+      line.setAttribute('x2', nearest.x);
+      dot.setAttribute('cx', nearest.x);
+      dot.setAttribute('cy', nearest.y);
+
+      const sign = nearest.value > 0 ? '+' : (nearest.value < 0 ? '−' : '');
+      const abs  = Math.abs(nearest.value);
+      labelYear.textContent  = nearest.year;
+      labelValue.textContent = `${sign}${abs} pp`;
+
+      // Position label box above the dot, clamping at edges
+      const lx = Math.max(46, Math.min(694, nearest.x));
+      const ly = Math.max(46, nearest.y - 18);
+      labelBg.setAttribute('x', lx - 38);
+      labelBg.setAttribute('y', ly - 32);
+      labelYear.setAttribute('x',  lx); labelYear.setAttribute('y',  ly - 19);
+      labelValue.setAttribute('x', lx); labelValue.setAttribute('y', ly - 7);
+    }
+    hit.addEventListener('mousemove', update);
+    hit.addEventListener('mouseleave', () => { g.style.display = 'none'; });
+  }
+
+  // ============================================================
+  // First-answer + Follow-up demo content
+  // ============================================================
+  const FIRST_Q = "Wann zeigt sich erstmals der Röstigraben in den Abstimmungen?";
+  const FIRST_INTRO_HTML = `
+<p>Der Begriff <strong>Röstigraben</strong> als kulturpolitische Trennlinie zwischen der deutsch- und der französischsprachigen Schweiz wird in der Forschung erst seit den 1970er-Jahren systematisch verwendet<span class="cite">1</span>. Empirisch lässt er sich in eidgenössischen Abstimmungen jedoch deutlich früher nachweisen.</p>
+<p>Eine erste klar dokumentierte Divergenz zeigt sich bereits bei der <strong>Bundesverfassungsrevision von 1872</strong>: Die Romandie stimmte mehrheitlich Ja (zentralistische Modernisierung), die Deutschschweiz mehrheitlich Nein. Innerhalb des seit 1848 vollständig erfassten Korpus ist die <strong>Militärorganisations-Abstimmung 1895</strong> der erste Fall, in dem sich die Sprachregionen mit hoher statistischer Signifikanz unterscheiden<span class="cite">2</span><span class="cite">3</span>.</p>`.trim();
+
+  // Split into two parts so we can trigger the canton-map reveal exactly
+  // after the phrase „Wasserscheide des modernen Röstigrabens" is typed.
+  const FIRST_REST_PART1 = `
+<p>Eine zweite, qualitativ andere Phase beginnt mit der Abstimmung über den <strong>EWR-Beitritt am 6. Dezember 1992</strong>: Erstmals seit den 1930ern divergierten Romandie und Deutschschweiz dauerhaft und in fast jeder Aussenpolitik-Vorlage<span class="cite">4</span><span class="cite">5</span>. Politikwissenschaftlich gilt 1992 deshalb in der Forschung als <em>«Wasserscheide des modernen Röstigrabens»</em><span class="cite">6</span>.</p>`.trim();
+  const FIRST_REST_PART2 = `
+<p><strong>Methodischer Hinweis:</strong> Vor 1971 stimmten in der Mehrzahl der Kantone keine Frauen mit, was den Vergleich über die gesamte Stimmberechtigung verändert. Die hier dargestellten Werte sind auf die jeweils stimmberechtigte Bevölkerung normiert<span class="cite">7</span>.</p>`.trim();
+
+  const TIMELINE_VIZ_HTML = `
+<div class="viz-inline">
+  <div class="viz-head">
+    <span>Sprachregionen-Divergenz · Ja-Anteil-Differenz Romandie minus Deutschschweiz (Prozentpunkte)</span>
+    <span class="tag">Zeitreihe</span>
+  </div>
+  <svg viewBox="0 0 720 200" class="timeline-svg" preserveAspectRatio="none">
+    <line class="grid" x1="40" y1="40" x2="700" y2="40"/>
+    <line class="grid" x1="40" y1="80" x2="700" y2="80"/>
+    <line class="grid" x1="40" y1="120" x2="700" y2="120"/>
+    <line class="grid" x1="40" y1="160" x2="700" y2="160"/>
+    <line x1="40" y1="100" x2="700" y2="100" stroke="#3a3e48" stroke-width="1"/>
+    <g class="axis">
+      <text x="40" y="195">1880</text>
+      <text x="172" y="195">1910</text>
+      <text x="304" y="195">1940</text>
+      <text x="436" y="195">1970</text>
+      <text x="568" y="195">2000</text>
+      <text x="690" y="195" text-anchor="end">2024</text>
+    </g>
+    <g class="axis">
+      <text x="32" y="44" text-anchor="end">+30</text>
+      <text x="32" y="104" text-anchor="end">0</text>
+      <text x="32" y="164" text-anchor="end">-30</text>
+    </g>
+    <g>
+      <line x1="105" y1="40" x2="105" y2="170" stroke="#a5d7d2" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+      <text x="108" y="55" fill="#a5d7d2" font-size="11" font-family="Inter">1895: Militärorganisation</text>
+    </g>
+    <path d="M40,108 L60,112 L80,98 L100,72 L120,80 L140,92 L160,108 L180,118 L200,114 L220,108 L240,98 L260,80 L280,76 L300,68 L320,72 L340,82 L360,90 L380,88 L400,80 L420,74 L440,64 L460,52 L480,58 L500,66 L520,74 L540,68 L560,60 L580,54 L600,52 L620,46 L640,48 L660,42 L680,38 L700,42" fill="none" stroke="#a5d7d2" stroke-width="2"/>
+    <path d="M40,108 L60,112 L80,98 L100,72 L120,80 L140,92 L160,108 L180,118 L200,114 L220,108 L240,98 L260,80 L280,76 L300,68 L320,72 L340,82 L360,90 L380,88 L400,80 L420,74 L440,64 L460,52 L480,58 L500,66 L520,74 L540,68 L560,60 L580,54 L600,52 L620,46 L640,48 L660,42 L680,38 L700,42 L700,100 L40,100 Z" fill="url(#fadeR)" opacity="0.25"/>
+    <defs>
+      <linearGradient id="fadeR" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#a5d7d2"/>
+        <stop offset="1" stop-color="#a5d7d2" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>`.trim();
+
+  const VIZ_LOADER_HTML = `
+<div class="viz-loading">
+  <div class="viz-loading-head">
+    <span>Zeitreihe wird generiert</span>
+    <span class="thinking-dots"><span></span><span></span><span></span></span>
+  </div>
+  <div class="viz-loading-skeleton"></div>
+</div>`.trim();
+
+  const SOURCES_FIRST_HTML = `
+<div class="sources-section">
+  <div class="sources-label">Quellen für diese Analyse</div>
+  <div class="sources-row">
+    <a class="source-chip"><span class="num">1</span>Kriesi (1995): Le clivage linguistique</a>
+    <a class="source-chip"><span class="num">2</span>BFS Abstimmungsstatistik 1895</a>
+    <a class="source-chip"><span class="num">3</span>VOX-Analysen 1895–1920</a>
+    <a class="source-chip"><span class="num">4</span>Sciarini &amp; Listhaug (1997)</a>
+    <a class="source-chip"><span class="num">5</span>Trechsel (2000)</a>
+    <a class="source-chip"><span class="num">6</span>Linder &amp; Mueller (2017)</a>
+    <a class="source-chip"><span class="num">7</span>Vox Helvetica Korpus, codebook v3</a>
+  </div>
+</div>`.trim();
+
+  // Single, persistent placeholder shown after the first answer and never changed again.
+  const NEW_PLACEHOLDER   = 'Geben Sie Ihre Frage an die Schweizer Demokratiegeschichte ein.';
+  const FINAL_PLACEHOLDER = 'Geben Sie Ihre Frage an die Schweizer Demokratiegeschichte ein.';
+
+  const FOLLOWUP_Q = "Stimmt es, dass die Romandie systematisch arbeiterfreundlicher abstimmt?";
+  const THINKING_STAGES = [
+    "Frage wird analysiert",
+    "Korpus wird nach Vorlagen gefiltert · 704 → 67 thematisch passend",
+    "VOX-Nachbefragungen werden konsultiert (1977–2024)",
+    "Strukturvariablen-Kontrolle für Sprachregion wird durchgeführt",
+    "Expert:innen-Dokumente werden integriert (Mazzoleni & Rayner, Vatter)",
+    "Antwort wird zusammengestellt und Belege werden verifiziert"
+  ];
+  const FOLLOWUP_A_HTML = `
+<p>Die empirische Antwort lautet: <strong>mehrheitlich ja — aber mit wichtigen Differenzierungen</strong>.</p>
+<p>Über die vergangenen 80 Jahre zeigt der Korpus ein robustes Muster: Bei Vorlagen mit klarem arbeitnehmer:innen-orientiertem oder sozialpolitischem Profil stimmt die Romandie systematisch zustimmender als die Deutschschweiz. In einer Subkohorte von <strong>67 «klassisch sozialpolitischen» Vorlagen</strong> (Sozialversicherungen, Arbeitsrecht, Mindestlohn, Mietschutz, Lohngleichheit, Vermögens- und Kapitalbesteuerung) beträgt die mittlere Ja-Anteils-Differenz <strong>+12,8 Prozentpunkte</strong> zugunsten der Romandie<span class="cite">11</span>.</p>
+<p>Besonders deutlich sichtbar wird das Muster etwa bei:</p>
+<ul class="answer-list">
+<li><strong>AHV-Einführung 1947</strong> — Romandie 89 %, Deutschschweiz 77 % (Δ +12)</li>
+<li><strong>Mindestlohn-Initiative 2014</strong> — RR 41 %, DCH 22 % (Δ +19)</li>
+<li><strong>«6 Wochen Ferien für alle» 2012</strong> — RR 48 %, DCH 29 % (Δ +19)</li>
+<li><strong>Lohngleichheits-Vorlage 2018</strong> — RR 67 %, DCH 51 % (Δ +16)</li>
+<li><strong>«99 %-Initiative» 2021</strong> — RR 47 %, DCH 34 % (Δ +13)</li>
+</ul>
+<p>Die Differenz ist seit den frühen 1990er Jahren <strong>stabil und tendenziell wachsend</strong><span class="cite">12</span>. Politologisch wird sie auf drei Faktoren zurückgeführt: (a) eine étatistischere politische Kultur in der Romandie, (b) eine andere Geschichte gewerkschaftlicher Organisierung mit stärkerer Verankerung im Service Public und (c) eine schwächere Mobilisierungsfähigkeit der wirtschaftlichen Verbände in der Westschweiz<span class="cite">13</span>.</p>
+<p><strong>Vorsicht mit dem Wort «systematisch»:</strong> Bei Vorlagen, die «Workers' Issues» mit migrations- oder europapolitischen Dimensionen verschränken — etwa flankierende Massnahmen zur Personenfreizügigkeit — bricht das Muster auf. Hier stimmt die Romandie nicht zuverlässig arbeitnehmer:innen-freundlicher; teils kehrt sich der Effekt sogar um<span class="cite">14</span>.</p>
+<p>Möchtest du die 67 klassifizierten Initiativen durchforsten oder eine Heatmap der Schweiz darstellen, welche Regionen in welchem Jahr wie arbeiter:innenfreundlich abgestimmt haben?</p>
+<div class="sources-section">
+<div class="sources-label">Quellen für diese Analyse</div>
+<div class="sources-row">
+<a class="source-chip"><span class="num">11</span>Keiser et al. (2027), §4.2</a>
+<a class="source-chip"><span class="num">12</span>BFS Sprachregionen-Panel 1990–2024</a>
+<a class="source-chip"><span class="num">13</span>Mazzoleni &amp; Rayner (2012)</a>
+<a class="source-chip"><span class="num">14</span>Vatter (2018), Polit. Geographie</a>
+</div>
+</div>`.trim();
+
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  // ---------- Scroll: follow generated content, but don't fight the user ----------
+  let userScrolledUp = false;
+  let lastAutoScrollY = 0;
+  window.addEventListener('scroll', () => {
+    const nearBottom = (window.scrollY + window.innerHeight) >= (document.body.scrollHeight - 80);
+    if (nearBottom) userScrolledUp = false;
+    else if (Math.abs(window.scrollY - lastAutoScrollY) > 30) userScrolledUp = true;
+  });
+  function scrollStream() {
+    if (userScrolledUp) return;
+    const y = document.body.scrollHeight;
+    window.scrollTo({ top: y, behavior: 'auto' });
+    lastAutoScrollY = window.scrollY;
+  }
+
+  // ---------- Streaming HTML typer with a STABLE cursor ----------
+  // The cursor is one persistent DOM node, moved via appendChild as the
+  // current open element changes. This way the CSS animation is never reset.
+  function typeHtml(target, html, baseSpeed = 12) {
+    return new Promise(resolve => {
+      target.innerHTML = '';
+      const cursor = document.createElement('span');
+      cursor.className = 'typing-cursor';
+      cursor.textContent = '▍';
+      target.appendChild(cursor);
+
+      const stack = [target];
+      const current = () => stack[stack.length - 1];
+
+      function moveCursorInto(el) {
+        if (cursor.parentNode !== el) el.appendChild(cursor); // single-call move keeps animation alive
+      }
+      function appendTextBeforeCursor(text) {
+        const prev = cursor.previousSibling;
+        if (prev && prev.nodeType === Node.TEXT_NODE) prev.data += text;
+        else current().insertBefore(document.createTextNode(text), cursor);
+      }
+      function decodeEntity(s) {
+        const t = document.createElement('textarea');
+        t.innerHTML = s;
+        return t.value;
+      }
+      function parseAttrs(str) {
+        const out = {};
+        const re = /([a-zA-Z_:][\w:.-]*)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+)))?/g;
+        let m;
+        while ((m = re.exec(str)) !== null) {
+          out[m[1]] = (m[2] !== undefined ? m[2] : m[3] !== undefined ? m[3] : m[4] !== undefined ? m[4] : '');
+        }
+        return out;
+      }
+      const VOID_TAGS = new Set(['br','img','hr','input','meta','link']);
+
+      let i = 0;
+      function step() {
+        if (i >= html.length) {
+          cursor.remove();
+          scrollStream();
+          resolve();
+          return;
+        }
+        const c = html[i];
+        if (c === '<') {
+          const end = html.indexOf('>', i);
+          if (end > i) {
+            const inner = html.slice(i + 1, end);
+            if (inner.startsWith('/')) {
+              // close tag — pop stack, move cursor back to parent
+              if (stack.length > 1) {
+                stack.pop();
+                moveCursorInto(current());
+              }
+            } else {
+              const selfClose = inner.endsWith('/');
+              const body = inner.replace(/\/$/, '').trim();
+              const spaceIdx = body.search(/\s/);
+              const tagName = (spaceIdx > 0 ? body.slice(0, spaceIdx) : body).toLowerCase();
+              const attrsStr = spaceIdx > 0 ? body.slice(spaceIdx + 1) : '';
+              const el = document.createElement(tagName);
+              const attrs = parseAttrs(attrsStr);
+              Object.entries(attrs).forEach(([k, v]) => { try { el.setAttribute(k, v); } catch (_) {} });
+              current().insertBefore(el, cursor);
+              if (!selfClose && !VOID_TAGS.has(tagName)) {
+                stack.push(el);
+                moveCursorInto(el);
+              }
+            }
+            i = end + 1;
+            if (i % 30 === 0) scrollStream();
+            return setTimeout(step, 0);
+          }
+        }
+        if (c === '&') {
+          const end = html.indexOf(';', i);
+          if (end > i && end - i < 10) {
+            appendTextBeforeCursor(decodeEntity(html.slice(i, end + 1)));
+            i = end + 1;
+            return setTimeout(step, baseSpeed);
+          }
+        }
+        appendTextBeforeCursor(c);
+        i++;
+        if (i % 14 === 0) scrollStream();
+        const d = c === '\n' ? 2
+                : '.?!'.includes(c) ? baseSpeed + 70
+                : ',;:'.includes(c) ? baseSpeed + 30
+                : baseSpeed + Math.random() * baseSpeed;
+        setTimeout(step, d);
+      }
+      step();
+    });
+  }
+
+  // ---------- Composer typing helper (textarea) ----------
+  async function typeIntoTextarea(ta, text) {
+    for (let i = 1; i <= text.length; i++) {
+      ta.value = text.slice(0, i);
+      ta.dispatchEvent(new Event('input', { bubbles: true }));
+      const ch = text[i - 1] || '';
+      let d = 18 + Math.random() * 26;
+      if (ch === ' ') d += 12;
+      if (',.?!'.includes(ch)) d += 70;
+      await sleep(d);
+    }
+  }
+
+  // Glow-Dauer der Trust-Card (muss zur CSS-Animation passen).
+  const TRUST_GLOW_DURATION = 1400;
+
+  // ---------- Trust-card single highlight (when Vertrauensindex updates) ----------
+  function blinkTrust() {
+    const card = document.getElementById('trustCard');
+    if (!card || card.classList.contains('collapsed')) return;
+    card.classList.remove('trust-blink');
+    void card.offsetWidth;             // restart animation
+    card.classList.add('trust-blink');
+    setTimeout(() => card.classList.remove('trust-blink'), TRUST_GLOW_DURATION + 50);
+  }
+
+  // ---------- Composer single highlight ----------
+  function pulseComposer() {
+    const composer = document.querySelector('.composer');
+    if (!composer) return;
+    composer.classList.remove('composer-glow');
+    void composer.offsetWidth;
+    composer.classList.add('composer-glow');
+    setTimeout(() => composer.classList.remove('composer-glow'), 2700);
+  }
+
+  // ---------- After-answer attention sequence:
+  //   1. Trust-Karte glüht einmal sauber auf (kein Nach-Blink)
+  //   2. Parallel läuft das Update der Karte (Counter + Note-Typing)
+  //   3. 2 Sekunden NACH Ende der gesamten Index-Animation pulst der Composer.
+  //   Wird NICHT nach der letzten Antwort (state === 'five') aufgerufen.
+  async function flagAnswerFinished() {
+    blinkTrust();
+    // warte bis BEIDES vorbei ist: das Glow UND das Counter-/Typing-Update
+    await Promise.all([
+      new Promise(r => setTimeout(r, TRUST_GLOW_DURATION)),
+      _trustDonePromise
+    ]);
+    // dann 2-Sekunden-Pause, dann Composer aufleuchten
+    setTimeout(pulseComposer, 2000);
+  }
+
+  // ---------- Message builders ----------
+  function appendUserMessage(text) {
+    const inner = document.getElementById('chatStream');
+    const wrap = document.createElement('div');
+    wrap.className = 'msg user';
+    wrap.innerHTML = `
+      <div class="avatar">JT</div>
+      <div class="bubble">
+        <div class="name">Sie</div>
+        <div class="text"></div>
+      </div>`;
+    wrap.querySelector('.text').textContent = text;
+    inner.appendChild(wrap);
+    scrollStream();
+    return wrap;
+  }
+  function appendAssistantBubble() {
+    const inner = document.getElementById('chatStream');
+    const wrap = document.createElement('div');
+    wrap.className = 'msg assistant';
+    wrap.innerHTML = `
+      <div class="avatar" aria-label="Vox Helvetica">
+        <img src="vox-logo.png" alt="" aria-hidden="true" />
+      </div>
+      <div class="bubble">
+        <div class="name">vox helvetica publica</div>
+        <div class="text"></div>
+      </div>`;
+    inner.appendChild(wrap);
+    scrollStream();
+    return wrap;
+  }
+  function appendThinkingBubble() {
+    const wrap = appendAssistantBubble();
+    wrap.querySelector('.text').innerHTML = `
+      <div class="thinking-status">
+        <span class="thinking-dots"><span></span><span></span><span></span></span>
+        <span class="stage-text">Frage wird analysiert</span>
+      </div>`;
+    scrollStream();
+    return wrap;
+  }
+  async function cycleThinking(bubble, stages) {
+    const stage = bubble.querySelector('.stage-text');
+    for (const s of stages) {
+      stage.style.opacity = '0';
+      await sleep(140);
+      stage.textContent = s;
+      stage.style.opacity = '1';
+      await sleep(900 + Math.random() * 500);
+    }
+  }
+
+  // ============================================================
+  // Reveal Vertrauensindex + Originalquellen — they stay collapsed
+  // until the first answer is finished, then fade in with a stagger.
+  // ============================================================
+  function revealContextCards() {
+    ['trustCard', 'sourcesCard'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (!el || !el.classList.contains('collapsed')) return;
+      el.classList.remove('collapsed');
+      el.style.animationDelay = (i * 0.18) + 's';
+      el.classList.add('fade-in');
+    });
+  }
+
+  // ============================================================
+  // Vertrauensindex — slight, smoothly-animated update after each answer
+  // ============================================================
+  // Token used to abort an in-flight trust-note typer when a new update arrives.
+  let _trustNoteToken = 0;
+  let _trustInitialized = false;
+  // Promise resolves when the *entire* visual update of the Vertrauensindex
+  // (count + fade + typing) has finished. Used to time the composer glow.
+  let _trustDonePromise = Promise.resolve();
+
+  function updateTrust(value, sources, note) {
+    const bar  = document.getElementById('trustBarFill');
+    const val  = document.getElementById('trustValue');
+    const txt  = document.getElementById('trustNote');
+    if (!bar || !val || !txt) { _trustDonePromise = Promise.resolve(); return _trustDonePromise; }
+
+    const fullNote = `Antwort gestützt auf ${sources} unabhängige Quellen aus 4 Datenklassen. ${note}`;
+    const finalColor = value >= 85 ? 'var(--success)'
+                     : value >= 78 ? 'var(--accent)'
+                     : '#e8b150';
+
+    // FIRST call: just show the final values (card is fading in alongside).
+    if (!_trustInitialized) {
+      _trustInitialized = true;
+      bar.style.width    = value + '%';
+      val.textContent    = value + ' %';
+      val.style.color    = finalColor;
+      txt.textContent    = fullNote;
+      txt.style.opacity  = '1';
+      _trustDonePromise = Promise.resolve();
+      return _trustDonePromise;
+    }
+
+    // SUBSEQUENT updates: smooth count-up + note fade-out → re-type sequence.
+    const myToken = ++_trustNoteToken;
+    bar.style.width = value + '%';
+
+    _trustDonePromise = new Promise(resolve => {
+      const oldVal = parseInt(val.textContent, 10) || 0;
+      const newVal = value;
+      const startT = performance.now();
+      const DURATION = 900;
+      function tick(now) {
+        const p = Math.min(1, (now - startT) / DURATION);
+        const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        const cur = Math.round(oldVal + (newVal - oldVal) * eased);
+        val.textContent = cur + ' %';
+        if (p < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          val.textContent = newVal + ' %';
+          val.style.color = finalColor;
+          txt.style.opacity = '0';
+          setTimeout(() => {
+            if (myToken !== _trustNoteToken) { resolve(); return; }
+            txt.textContent = '';
+            txt.style.opacity = '1';
+            typeTrustNote(txt, fullNote, myToken).then(resolve);
+          }, 360);
+        }
+      }
+      requestAnimationFrame(tick);
+    });
+    return _trustDonePromise;
+  }
+
+  // Character-by-character typer for the Vertrauensindex note. Returns a Promise
+  // that resolves when typing is complete (or aborted).
+  function typeTrustNote(target, text, token) {
+    return new Promise(resolve => {
+      let i = 0;
+      function step() {
+        if (token !== _trustNoteToken) { resolve(); return; }     // aborted
+        if (i > text.length) { resolve(); return; }
+        target.textContent = text.slice(0, i);
+        const ch = text[i - 1] || '';
+        i++;
+        let d = 7 + Math.random() * 8;
+        if ('.!?'.includes(ch)) d += 80;
+        else if (',;:'.includes(ch)) d += 35;
+        else if (ch === ' ') d += 4;
+        setTimeout(step, d);
+      }
+      step();
+    });
+  }
+
+  // ============================================================
+  // FIRST ANSWER — auto-plays on page load
+  // ============================================================
+  async function runFirstAnswer() {
+    const ta = document.querySelector('.composer textarea');
+    const params = new URLSearchParams(location.search);
+    const q = params.get('q') || FIRST_Q;
+
+    await sleep(420);
+    appendUserMessage(q);
+    await sleep(380);
+
+    const bubble = appendAssistantBubble();
+    const textEl = bubble.querySelector('.text');
+
+    // Segment 1 — intro paragraphs (typed)
+    const seg1 = document.createElement('div');
+    seg1.className = 'streaming-seg';
+    textEl.appendChild(seg1);
+    await typeHtml(seg1, FIRST_INTRO_HTML, 5);
+
+    // Graphic loading animation
+    await sleep(220);
+    const loaderHost = document.createElement('div');
+    loaderHost.innerHTML = VIZ_LOADER_HTML;
+    const loaderNode = loaderHost.firstElementChild;
+    textEl.appendChild(loaderNode);
+    scrollStream();
+    await sleep(1900);
+
+    // Replace loader with the actual timeline graphic
+    const vizHost = document.createElement('div');
+    vizHost.innerHTML = TIMELINE_VIZ_HTML;
+    loaderNode.replaceWith(vizHost.firstElementChild);
+    setupTimelineHover();
+    scrollStream();
+    await sleep(360);
+
+    // Segment 2a — EWR / Röstigraben paragraph (typed, ends with the trigger phrase)
+    const seg2a = document.createElement('div');
+    seg2a.className = 'streaming-seg';
+    textEl.appendChild(seg2a);
+    await typeHtml(seg2a, FIRST_REST_PART1, 5);
+
+    // Trigger phrase "Wasserscheide des modernen Röstigrabens" was just typed.
+    // Drop in a small inline loader, fade in the canton map in the right panel,
+    // then remove the loader and continue typing.
+    await sleep(220);
+    const inlineLoader = document.createElement('div');
+    inlineLoader.className = 'inline-viz-loader';
+    inlineLoader.innerHTML = `<span class="thinking-dots"><span></span><span></span><span></span></span><span>generiere Visualisierung nationales Abstimmungsergebnis auf Gemeindeebene …</span>`;
+    textEl.appendChild(inlineLoader);
+    scrollStream();
+    await sleep(1400);
+
+    // Reveal the canton map (right panel)
+    const mapCard = document.getElementById('mapCard');
+    if (mapCard && mapCard.classList.contains('collapsed')) {
+      mapCard.classList.remove('collapsed');
+      mapCard.classList.add('fade-in');
+    }
+    await sleep(700);
+
+    // Loader fades out, then is removed
+    inlineLoader.classList.add('fade-out');
+    setTimeout(() => inlineLoader.remove(), 500);
+    await sleep(550);
+
+    // Segment 2b — methodischer Hinweis (typed)
+    const seg2b = document.createElement('div');
+    seg2b.className = 'streaming-seg';
+    textEl.appendChild(seg2b);
+    await typeHtml(seg2b, FIRST_REST_PART2, 5);
+
+    // Sources at the end
+    await sleep(260);
+    const srcHost = document.createElement('div');
+    srcHost.innerHTML = SOURCES_FIRST_HTML;
+    textEl.appendChild(srcHost.firstElementChild);
+    scrollStream();
+
+    // Unlock composer + set the new placeholder, then bind follow-up trigger
+    if (ta) {
+      ta.removeAttribute('readonly');
+      ta.setAttribute('placeholder', NEW_PLACEHOLDER);
+      bindFollowUpTrigger(ta);
+    }
+    revealContextCards();
+    updateTrust(94, 7, 'Hohe Übereinstimmung zwischen Primärdaten und Sekundärliteratur.');
+    saveDemoState('first');
+    flagAnswerFinished();
+  }
+
+  // ============================================================
+  // SECOND ANSWER — triggered only when user clicks the prompt field
+  // ============================================================
+  async function runFollowUpDemo() {
+    const ta = document.querySelector('.composer textarea');
+    if (!ta) return;
+    ta.setAttribute('readonly', '');
+    ta.blur();
+    await sleep(180);
+    await typeIntoTextarea(ta, FOLLOWUP_Q);
+    await sleep(520);
+
+    appendUserMessage(ta.value);
+    ta.value = '';
+    ta.style.height = 'auto';
+    ta.dispatchEvent(new Event('input', { bubbles: true }));
+
+    const thinking = appendThinkingBubble();
+    await cycleThinking(thinking, THINKING_STAGES);
+
+    const textEl = thinking.querySelector('.text');
+    textEl.innerHTML = '';
+    await typeHtml(textEl, FOLLOWUP_A_HTML, 6);
+    scrollStream();
+    ta.removeAttribute('readonly');
+    ta.setAttribute('placeholder', FINAL_PLACEHOLDER);
+    updateTrust(83, 11, 'Subkohorte n=67 — methodisch komplex, einzelne Studien widersprechen sich.');
+    saveDemoState('both');
+    flagAnswerFinished();
+    // Chain: next composer click opens the visualization demo
+    bindVisualizationTrigger(ta);
+  }
+
+  // ============================================================
+  // THIRD DEMO — Röstigraben heatmap over time
+  // ============================================================
+  // ---------- THIRD demo: heatmap table (Sprachregionen × Dekaden) ----------
+  const THIRD_Q = "Visualisiere mir den Röstigraben im Verlauf der Schweizer Geschichte.";
+  const THIRD_THINKING = [
+    "Frage wird interpretiert",
+    "Sprachregionen werden aggregiert (DCH · Romandie · Ticino · Rätoromanisch)",
+    "Ja-Anteils-Differenz vs. CH-Mittel wird pro Dekade berechnet",
+    "1848–2024: 18 Dekaden × 4 Regionen = 72 Zellen werden gerendert",
+    "Heatmap wird animiert"
+  ];
+
+  // ---------- FOURTH demo: animated Swiss commune map over time ----------
+  const FOURTH_Q = "Visualisiere mir den historischen Wandel des Abstimmungsverhaltens der Sprachregionen auf der Schweizer Karte.";
+  const FOURTH_THINKING = [
+    "Frage wird interpretiert",
+    "Gemeinde-Mikrodaten werden abgerufen (n = 2 113)",
+    "Pro Jahr wird die Ja-Anteils-Differenz zur CH-Schnitt berechnet",
+    "1866–2026: 33 Zeitschritte werden zu einer animierten Choropleth verschmolzen",
+    "Karte wird gerendert"
+  ];
+
+  // ---------- FIFTH demo: ecological-fallacy critique + VOX/VOTO individual data ----------
+  const FIFTH_Q = "Heisst das, dass Menschen, die in der Romandie leben, zu allem Ja sagen?";
+  const FIFTH_THINKING = [
+    "Frage wird interpretiert — kritischer Methodenpunkt erkannt",
+    "Aggregat-Daten allein erlauben keine Individual-Inferenz (ökologischer Fehlschluss, Robinson 1950)",
+    "VOX/VOTO-Individualdaten werden geladen (1978–2024, n ≈ 247 000 Befragte)",
+    "Mehrebenenmodell mit Sprachregion + Individualvariablen wird geschätzt",
+    "Antwort wird formuliert"
+  ];
+
+  const RG_REGIONS = [
+    { name: 'Deutschschweiz',     vals: [-2,-1,-2,-3,-4,-3,-1, 1, 2, 1,-2,-3,-4,-5,-7,-8,-9,-10] },
+    { name: 'Romandie',           vals: [ 1, 2, 3, 4, 5, 4, 3, 1, 2, 4, 6, 8,12,15,22,25,28, 30] },
+    { name: 'Italienisch (TI)',   vals: [ 1, 0,-1,-2,-3,-2,-1, 0,-2,-3,-1,-2,-3,-5,-8,-9,-7,-10] },
+    { name: 'Rätoromanisch (GR)', vals: [ 0, 1,-1, 0, 0, 1, 0,-1, 0, 1, 0,-1,-2,-3,-4,-5,-3, -5] },
+  ];
+  const RG_DECADES = ['1850','1860','1870','1880','1890','1900','1910','1920',
+                      '1930','1940','1950','1960','1970','1980','1990','2000','2010','2020'];
+
+  function colorForDelta(d) {
+    if (d >=  25) return '#357770';
+    if (d >=  15) return '#5a9d96';
+    if (d >=   8) return '#85c0ba';
+    if (d >=   3) return '#a5d7d2';
+    if (d >=  -2) return '#cae6e2';
+    if (d >=  -5) return '#ecdfd6';
+    if (d >=  -8) return '#eac9bc';
+    if (d >= -15) return '#d49d8c';
+    if (d >= -25) return '#bb6e5c';
+    return '#7e2e22';
+  }
+
+  // Per-canton "language drift" — positive = Romandie-style (Ja-leaning over time),
+  // negative = Deutschschweiz/Alpenraum-style.  Used as the structural pull factor.
+  const RG_LANG = {
+    'ZH':-0.30, 'BE':-0.20, 'LU':-0.35, 'UR':-0.40, 'SZ':-0.45, 'OW':-0.50,
+    'NW':-0.40, 'GL':-0.30, 'ZG':-0.20, 'FR':+0.55, 'SO':-0.10, 'BS':+0.05,
+    'BL':-0.05, 'SH':-0.35, 'AR':-0.45, 'AI':-0.55, 'SG':-0.35, 'GR':-0.10,
+    'AG':-0.30, 'TG':-0.45, 'TI':-0.40, 'VD':+1.00, 'VS':+0.50, 'NE':+1.00,
+    'GE':+1.00, 'JU':+0.85
+  };
+  // Strength curve: gradually settles, with a few historical pulses but
+  // softer dips so the trajectory feels like "tuning in" rather than
+  // wild swings.
+  function rgStrength(year) {
+    let base;
+    if (year < 1900)      base = 0.15 + (year - 1866) / 34 * 0.30;   // 0.15 → 0.45
+    else if (year < 1940) base = 0.45 + (year - 1900) / 40 * 0.40;   // 0.45 → 0.85
+    else if (year < 1968) base = 0.85 + (year - 1940) / 28 * 0.15;   // 0.85 → 1.00
+    else                  base = 1.00;
+    const pulse = (y, w, h) => h * Math.exp(-Math.pow((year - y) / w, 2));
+    let osc = 0;
+    osc += pulse(1874, 6.0, 0.14);  // Bundesverfassung
+    osc += pulse(1920, 6.0, 0.10);  // Post-WWI
+    osc += pulse(1971, 5.0, 0.06);  // Frauenstimmrecht
+    osc -= pulse(1905, 5.0, 0.07);
+    osc -= pulse(1955, 5.0, 0.04);
+    return Math.max(0.10, Math.min(1.0, base + osc));
+  }
+
+  // Per-commune noise: each Gemeinde gets its own time-cycle frequency and
+  // phase, so they don't pulse in lockstep. Amplitude scales DOWN as the
+  // pattern locks in — early years feel chaotic, later years settle.
+  function communeNoise(i, year) {
+    // Per-commune cycle properties (stable, derived from index)
+    const freq  = 0.55 + (Math.sin(i * 13.5) + 1) * 0.35;  // ~0.55–1.25
+    const phase = Math.cos(i * 7.31) * 2.4;                // unique offset
+    const t = (year - 1900) / 7 * freq;
+    const a = Math.sin(i * 12.9898);
+    const b = Math.cos(i * 78.233);
+    const drift1 = Math.sin(i * 0.473 + t * 1.10 + phase) * 0.55;
+    const drift2 = Math.cos(i * 0.91  + t * 1.65 - phase * 0.6) * 0.38;
+    return a * 0.45 + b * 0.38 + drift1 + drift2;
+  }
+
+  function buildAnimatedSwissMapHTML() {
+    // Clone the existing live #swissMap (already in the right sidebar) so we
+    // get all 2 113 commune polygons + canton borders + lakes for free, then
+    // we strip out interactivity and labels and treat it as a fresh canvas.
+    const src = document.querySelector('#swissMap svg');
+    if (!src) return '<p style="color: var(--text-dim);">Kartendaten nicht verfügbar</p>';
+    const clone = src.cloneNode(true);
+    clone.removeAttribute('aria-label');
+    clone.removeAttribute('id');
+    // Strip city labels — keep only the map structure
+    clone.querySelectorAll('.cities, .hit, .tl-hover, .country-outline + .country-outline').forEach(el => el.remove());
+    // Reset all communes to neutral so the animation can fill them in
+    clone.querySelectorAll('.commune').forEach(p => {
+      p.setAttribute('fill',   '#3a3a3c');
+      p.setAttribute('stroke', '#3a3a3c');
+    });
+    return `
+<div class="rg-anim-wrap">
+  <div class="rg-anim-head">
+    <span>Röstigraben über die Zeit · Abweichung vom Bundesmittel pro Gemeinde</span>
+    <div class="rg-anim-actions">
+      <button class="rg-replay-btn" type="button" aria-label="Animation neu abspielen">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="1 4 1 10 7 10"></polyline>
+          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+        </svg>
+        <span>Replay</span>
+      </button>
+      <span class="tag">animiert</span>
+    </div>
+  </div>
+  <div class="rg-anim-svg-host">${clone.outerHTML}</div>
+  <div class="rg-anim-meta">
+    <div class="rg-year-counter" id="rgYearCounter">1866</div>
+    <div class="rg-legend">
+      <span>−30 pp</span><div class="rg-legend-bar"></div><span>+30 pp</span>
+    </div>
+  </div>
+</div>`.trim();
+  }
+
+  function bindReplayButton(wrap) {
+    const old = wrap.querySelector('.rg-replay-btn');
+    if (!old) return;
+    // Swap the button out for a clone — this drops any stale flags AND any
+    // existing listeners in one step. Then bind fresh.
+    const btn = old.cloneNode(true);
+    old.replaceWith(btn);
+    let busy = false;
+    btn.addEventListener('click', async () => {
+      if (busy) return;
+      busy = true;
+      btn.disabled = true;
+      btn.classList.add('busy');
+      // Reset every commune to neutral
+      wrap.querySelectorAll('.commune').forEach(p => {
+        p.setAttribute('fill',   '#3a3a3c');
+        p.setAttribute('stroke', '#3a3a3c');
+      });
+      const counter = wrap.querySelector('#rgYearCounter');
+      if (counter) counter.textContent = '1866';
+      await sleep(220);
+      await animateRoestiOverYears(wrap);
+      busy = false;
+      btn.disabled = false;
+      btn.classList.remove('busy');
+    });
+  }
+
+  async function animateRoestiOverYears(wrap) {
+    const counter  = wrap.querySelector('#rgYearCounter');
+    // Important: query communes directly on the wrap, NOT via `wrap.querySelector('svg')`.
+    // After the replay-button was introduced, the wrapper contains two SVGs
+    // (the refresh icon AND the Switzerland map). `wrap.querySelector('svg')`
+    // would return the icon, leaving the choropleth grey.
+    const communes = wrap.querySelectorAll('.rg-anim-svg-host .commune');
+    if (!counter || communes.length === 0) return;
+    // Build the year sequence: 1866, 1871, …, 2026 (33 frames)
+    const years = [];
+    for (let y = 1866; y <= 2026; y += 5) years.push(y);
+
+    // Frame timing: 320 ms per step → ~10.5 s for the full animation.
+    // The CSS transition on `.commune` (fill 0.35s linear) overlaps slightly
+    // with the next frame to produce smooth, organic colour drifts.
+    const FRAME = 320;
+    for (let step = 0; step < years.length; step++) {
+      const year = years[step];
+      counter.textContent = year;
+      const s = rgStrength(year);
+      communes.forEach((p, i) => {
+        // Target: each commune converges towards its actual EWR-1992 Ja-Anteils-
+        // Abweichung vom Schweizer Mittelwert (data-yes minus 50pp). At s=1 the
+        // animation freezes on the real EWR-pattern; at s=0 each commune is
+        // dominated by individual noise → no language pattern visible.
+        const yes = parseFloat(p.dataset.yes);
+        const targetDev = isFinite(yes) ? (yes - 50) : 0;
+        const indiv = communeNoise(i, year);
+        // Noise scales asymmetrically — strong at the start, almost gone at the end.
+        // s=0: indiv × 12 (~±18pp scatter)   s=1: indiv × 2 (~±3pp, barely visible)
+        const noiseAmp = 12 - 10 * s;
+        const dev = targetDev * s + indiv * noiseAmp;
+        const col = colorForDelta(dev);
+        p.setAttribute('fill', col);
+        p.setAttribute('stroke', col);
+      });
+      await sleep(FRAME);
+    }
+  }
+
+  function buildHeatmapSVG() {
+    const VW = 800, VH = 200;
+    const X0 = 120, Y0 = 12;
+    const W = 670, H = 152;
+    const cW = W / RG_DECADES.length;
+    const cH = H / RG_REGIONS.length;
+    let s = `<svg viewBox="0 0 ${VW} ${VH}" class="rg-svg" xmlns="http://www.w3.org/2000/svg">`;
+    // Row labels
+    RG_REGIONS.forEach((r,i) => {
+      const y = Y0 + i*cH + cH/2;
+      s += `<text class="rg-row-label" x="${X0-10}" y="${y}">${r.name}</text>`;
+    });
+    // Cells (initial neutral fill; data-target carries final colour, data-delay the stagger)
+    s += '<g class="rg-cells">';
+    RG_REGIONS.forEach((r,ri) => {
+      r.vals.forEach((v,ci) => {
+        const x = X0 + ci*cW;
+        const y = Y0 + ri*cH;
+        const target = colorForDelta(v);
+        const delay = ci*90 + ri*40;
+        s += `<rect class="rg-cell" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${(cW-0.5).toFixed(1)}" height="${(cH-0.5).toFixed(1)}" rx="1" fill="#3a3a3c" data-target="${target}" data-delay="${delay}"/>`;
+      });
+    });
+    s += '</g>';
+    // Column labels (every 2nd to avoid crowding)
+    RG_DECADES.forEach((d,i) => {
+      if (i % 2 === 0 || i === RG_DECADES.length-1) {
+        const x = X0 + i*cW + cW/2;
+        s += `<text class="rg-col-label" x="${x.toFixed(1)}" y="${Y0+H+14}">${d}</text>`;
+      }
+    });
+    s += '</svg>';
+    return s;
+  }
+
+  function animateHeatmap(scope) {
+    scope.querySelectorAll('.rg-cell').forEach(rect => {
+      const delay = parseInt(rect.dataset.delay || '0', 10);
+      const target = rect.dataset.target;
+      setTimeout(() => rect.setAttribute('fill', target), delay);
+    });
+  }
+
+  const THIRD_INTRO_HTML = `
+<p>Die folgende Heatmap zeigt die <strong>Ja-Anteils-Abweichung pro Sprachregion vom Schweizer Mittelwert</strong> über alle eidgenössischen Vorlagen seit 1848, gemittelt auf Dekaden-Ebene. Positive Werte (mint) bedeuten zustimmender als der CH-Schnitt, negative Werte (rot) zurückhaltender.</p>`.trim();
+
+  const THIRD_REST_HTML = `
+<p>Drei strukturelle Beobachtungen lassen sich ablesen:</p>
+<ul class="answer-list">
+  <li><strong>Romandie</strong> verschiebt sich seit 1950 systematisch in den positiven Bereich; ab 1990 sind +20 pp und mehr die Norm.</li>
+  <li><strong>Deutschschweiz</strong> spiegelt diesen Drift seit den 1990ern in die andere Richtung — eine klare Polarisierung der beiden grössten Sprachregionen.</li>
+  <li><strong>Ticino</strong> bewegt sich nahe der Deutschschweiz, mit eigenständiger Volatilität bei Aussenpolitik und Migration<span class="cite">15</span>.</li>
+</ul>
+<p>Der „Röstigraben" ist also weniger eine konstante kulturelle Konstante als ein <strong>kumulierter Effekt seit Mitte des 20. Jahrhunderts</strong>, der sich nach 1992 strukturell verfestigt hat<span class="cite">16</span>.</p>
+<p>Möchtest du den Effekt nach Themenfeld (Aussenpolitik, Sozialpolitik, Wertefragen) aufschlüsseln oder mit Strukturvariablen (Urbanität, Konfession) interagieren lassen?</p>
+<div class="sources-section">
+<div class="sources-label">Quellen für diese Analyse</div>
+<div class="sources-row">
+<a class="source-chip"><span class="num">15</span>BFS Sprachregionen-Panel 1848–2024</a>
+<a class="source-chip"><span class="num">16</span>Linder &amp; Mueller (2017), Kap. 7</a>
+<a class="source-chip"><span class="num">17</span>Vox Helvetica Korpus, Aggregation v3.1</a>
+</div>
+</div>`.trim();
+
+  async function runVisualizationDemo() {
+    const ta = document.querySelector('.composer textarea');
+    if (!ta) return;
+    ta.setAttribute('readonly', '');
+    ta.blur();
+    await sleep(180);
+    await typeIntoTextarea(ta, THIRD_Q);
+    await sleep(520);
+
+    appendUserMessage(ta.value);
+    ta.value = '';
+    ta.style.height = 'auto';
+    ta.dispatchEvent(new Event('input', { bubbles: true }));
+
+    const thinking = appendThinkingBubble();
+    await cycleThinking(thinking, THIRD_THINKING);
+
+    const textEl = thinking.querySelector('.text');
+    textEl.innerHTML = '';
+
+    // Intro
+    const seg1 = document.createElement('div');
+    seg1.className = 'streaming-seg';
+    textEl.appendChild(seg1);
+    await typeHtml(seg1, THIRD_INTRO_HTML, 6);
+
+    // Loader for the heatmap-table
+    await sleep(220);
+    const loaderHost = document.createElement('div');
+    loaderHost.innerHTML = `
+<div class="viz-loading">
+  <div class="viz-loading-head">
+    <span>Heatmap wird gerendert</span>
+    <span class="thinking-dots"><span></span><span></span><span></span></span>
+  </div>
+  <div class="viz-loading-skeleton" style="height:170px"></div>
+</div>`.trim();
+    const loaderNode = loaderHost.firstElementChild;
+    textEl.appendChild(loaderNode);
+    scrollStream();
+    await sleep(1500);
+
+    // Heatmap table (Sprachregionen × Dekaden)
+    const heatHost = document.createElement('div');
+    heatHost.innerHTML = `
+<div class="rg-heatmap-wrap">
+  <div class="rg-heatmap-head">
+    <span>Sprachregionen-Divergenz · 1848–2024 (Δ Ja-Anteil vs. CH-Schnitt, pp)</span>
+    <span class="tag">animiert</span>
+  </div>
+  ${buildHeatmapSVG()}
+  <div class="rg-legend">
+    <span>−30 pp</span><div class="rg-legend-bar"></div><span>+30 pp</span>
+  </div>
+</div>`.trim();
+    const heatNode = heatHost.firstElementChild;
+    loaderNode.replaceWith(heatNode);
+    scrollStream();
+    await sleep(150);
+    animateHeatmap(heatNode);
+    await sleep(2400);
+
+    // Continuation
+    const seg2 = document.createElement('div');
+    seg2.className = 'streaming-seg';
+    textEl.appendChild(seg2);
+    await typeHtml(seg2, THIRD_REST_HTML, 6);
+
+    scrollStream();
+    ta.removeAttribute('readonly');
+    ta.setAttribute('placeholder', FINAL_PLACEHOLDER);
+    updateTrust(92, 14, 'Synthese über alle 704 Vorlagen — gute Replikation, Aggregateffekt robust.');
+    saveDemoState('three');
+    flagAnswerFinished();
+    // Chain: next composer click opens the animated Swiss-map demo
+    bindAnimatedMapTrigger(ta);
+  }
+
+  // ============================================================
+  // FOURTH DEMO — animated municipal-level Swiss map (1866→2026)
+  // ============================================================
+  const FOURTH_INTRO_HTML = `
+<p>Die folgende Animation zeigt für jede der <strong>2 113 Schweizer Gemeinden</strong> die <strong>Ja-Anteils-Abweichung vom Schweizer Mittelwert</strong>, gemittelt über alle Vorlagen einer Fünfjahresperiode. Positive Werte (mint) sind zustimmender, negative (rot) zurückhaltender als der CH-Schnitt. Der Counter unten zählt die Jahre von 1866 bis 2026 — beobachten Sie, wann das Sprachgrenzen-Muster zum ersten Mal aufscheint und wann es sich strukturell verfestigt.</p>`.trim();
+
+  const FOURTH_REST_HTML = `
+<p>Was Sie über die Animation sehen:</p>
+<ul class="answer-list">
+  <li>Schon in den <strong>1870er-Jahren</strong> (Bundesverfassungsrevision) blitzt das Muster auf, verschwindet aber wieder.</li>
+  <li>In der <strong>Zwischenkriegszeit</strong> und um die <strong>Frauenstimmrecht-Debatte 1971</strong> kehrt der Effekt zurück.</li>
+  <li>Erst nach <strong>1992</strong> (EWR-Schock) wird die Sprachgrenze auf Gemeindeebene zur strukturellen, jedes Jahr sichtbaren Konstante<span class="cite">18</span><span class="cite">19</span>.</li>
+</ul>
+<p>Der Röstigraben ist also kein konstanter Zustand, sondern ein <strong>historisch oszillierendes Muster</strong>, das sich erst spät im 20. Jahrhundert dauerhaft einschreibt.</p>
+<div class="sources-section">
+<div class="sources-label">Quellen für diese Analyse</div>
+<div class="sources-row">
+<a class="source-chip"><span class="num">18</span>BFS Abstimmungsstatistik 1866–2026 (Gemeindeebene)</a>
+<a class="source-chip"><span class="num">19</span>Vatter (2018), Politische Geographie der Schweiz</a>
+<a class="source-chip"><span class="num">20</span>Vox Helvetica Korpus · Aggregation v3.1</a>
+</div>
+</div>`.trim();
+
+  async function runAnimatedMapDemo() {
+    const ta = document.querySelector('.composer textarea');
+    if (!ta) return;
+    ta.setAttribute('readonly', '');
+    ta.blur();
+    await sleep(180);
+    await typeIntoTextarea(ta, FOURTH_Q);
+    await sleep(520);
+
+    appendUserMessage(ta.value);
+    ta.value = '';
+    ta.style.height = 'auto';
+    ta.dispatchEvent(new Event('input', { bubbles: true }));
+
+    const thinking = appendThinkingBubble();
+    await cycleThinking(thinking, FOURTH_THINKING);
+
+    const textEl = thinking.querySelector('.text');
+    textEl.innerHTML = '';
+
+    // Intro
+    const seg1 = document.createElement('div');
+    seg1.className = 'streaming-seg';
+    textEl.appendChild(seg1);
+    await typeHtml(seg1, FOURTH_INTRO_HTML, 6);
+
+    // Loader
+    await sleep(220);
+    const loaderHost = document.createElement('div');
+    loaderHost.innerHTML = `
+<div class="viz-loading">
+  <div class="viz-loading-head">
+    <span>Choropleth wird vorbereitet · 2 113 Gemeinden × 33 Zeitschritte</span>
+    <span class="thinking-dots"><span></span><span></span><span></span></span>
+  </div>
+  <div class="viz-loading-skeleton" style="height:230px"></div>
+</div>`.trim();
+    const loaderNode = loaderHost.firstElementChild;
+    textEl.appendChild(loaderNode);
+    scrollStream();
+    await sleep(1700);
+
+    // Replace with animated Swiss map
+    const mapHost = document.createElement('div');
+    mapHost.innerHTML = buildAnimatedSwissMapHTML();
+    const mapNode = mapHost.firstElementChild;
+    loaderNode.replaceWith(mapNode);
+    scrollStream();
+    await sleep(200);
+    await animateRoestiOverYears(mapNode);
+    bindReplayButton(mapNode);
+    await sleep(400);
+
+    // Continuation
+    const seg2 = document.createElement('div');
+    seg2.className = 'streaming-seg';
+    textEl.appendChild(seg2);
+    await typeHtml(seg2, FOURTH_REST_HTML, 6);
+
+    scrollStream();
+    ta.removeAttribute('readonly');
+    ta.setAttribute('placeholder', FINAL_PLACEHOLDER);
+    updateTrust(75, 17, 'Räumliche Inferenz auf Mikro-Ebene — extrapolierte Werte, Einzelgemeinden statistisch schwach gestützt.');
+    saveDemoState('four');
+    flagAnswerFinished();
+    // Chain: next composer click opens the ecological-fallacy critique
+    bindEcoFallacyTrigger(ta);
+  }
+
+  // ============================================================
+  // FIFTH DEMO — ecological-fallacy critique with VOX/VOTO data
+  // ============================================================
+  const FIFTH_INTRO_HTML = `
+<p>Eine sehr gute Frage — sie zielt mitten in eine zentrale methodische Limitation der bisherigen Antworten. Alles, was ich Ihnen gerade gezeigt habe, basiert auf <strong>Aggregatdaten</strong> (Gemeinde- und Sprachregionen-Ebene). Aus solchen Gruppendurchschnitten auf das Verhalten <em>einzelner</em> Menschen zu schliessen, wäre ein klassischer <strong>ökologischer Fehlschluss</strong> (Robinson 1950)<span class="cite">21</span>.</p>
+<p>Konkret: Auch wenn die Romandie als Region bei sozialpolitischen Vorlagen im Schnitt um +14 pp zustimmender ist als die Deutschschweiz, heisst das <em>nicht</em>, dass eine durchschnittliche Person aus der Romandie zu allem Ja sagt — und schon gar nicht, dass <em>die Sprache</em> die kausale Ursache wäre.</p>
+<p>Greife ich stattdessen auf die <strong>VOX- und VOTO-Nachabstimmungsbefragungen</strong> seit 1978 zurück (gfs.bern und FORS, n ≈ 247 000 Individualbefragungen) und kontrolliere für demographische Variablen, schrumpft der „Romandie-Effekt" dramatisch:</p>`.trim();
+
+  const FIFTH_REST_HTML = `
+<p>Drei Erkenntnisse aus dem Mehrebenenmodell:</p>
+<ul class="answer-list">
+  <li>Rund <strong>75 %</strong> des beobachteten Sprachregion-Effekts erklären sich durch <em>Kompositionseffekte</em> — die Romandie hat im Schnitt höheres Bildungsniveau, mehr urbane Bevölkerung und eine andere konfessionelle Struktur als die Deutschschweiz<span class="cite">22</span>.</li>
+  <li>Der <strong>Sprachregion-Reineffekt</strong> liegt bei nur +3,5 pp — statistisch signifikant (p &lt; 0.001 bei n=247 000), aber substantiell klein.</li>
+  <li>Die <strong>Heterogenität innerhalb der Romandie</strong> ist grösser als der Romandie-DCH-Unterschied: Die meisten Romand·e·s stimmen also keineswegs „zu allem Ja"; ihr Verhalten variiert stark nach individuellen Merkmalen<span class="cite">23</span>.</li>
+</ul>
+<p>Sprache ist also ein <strong>Korrelat</strong>, keine kausale Ursache. Die Sprachregion-Polarisierung der vorherigen Karten ist auf Aggregatebene real, sagt aber wenig über einzelne Wähler·innen aus. Wer in der Romandie lebt, ist im Schnitt vielleicht etwas zustimmender bei Sozialvorlagen — aber bei Migrations- oder Sicherheitsfragen kehrt sich das Muster teils sogar um.</p>
+<p>Möchten Sie die individuellen Profile nach Themenfeld aufschlüsseln oder die Heterogenität innerhalb der Romandie sichtbar machen?</p>
+<div class="sources-section">
+<div class="sources-label">Quellen für diese Analyse</div>
+<div class="sources-row">
+<a class="source-chip"><span class="num">21</span>Robinson, W. S. (1950): Ecological Correlations and the Behavior of Individuals</a>
+<a class="source-chip"><span class="num">22</span>VOX-Analysen / VOTO-Studien gfs.bern &amp; FORS, 1978–2024</a>
+<a class="source-chip"><span class="num">23</span>Sciarini (2021), <em>Politik in der Schweiz</em>, Kap. 5</a>
+</div>
+</div>`.trim();
+
+  function buildEcoFallacyHTML() {
+    return `
+<div class="eco-fallacy-wrap">
+  <div class="eco-fallacy-head">
+    <span>Sprachregion-Effekt auf Sozialpolitik · VOX/VOTO 1978–2024, n = 247 000</span>
+    <span class="tag">Mehrebenen­modell</span>
+  </div>
+  <div class="eco-fallacy-rows">
+    <div class="ef-row" data-value="14.2">
+      <span class="ef-label">Rohwert: Romandie vs. DCH</span>
+      <span class="ef-bar"><span class="ef-fill"></span></span>
+      <span class="ef-val">+14.2 pp</span>
+    </div>
+    <div class="ef-row" data-value="9.8">
+      <span class="ef-label">+ Bildung kontrolliert</span>
+      <span class="ef-bar"><span class="ef-fill"></span></span>
+      <span class="ef-val">+9.8 pp</span>
+    </div>
+    <div class="ef-row" data-value="6.7">
+      <span class="ef-label">+ Urbanität (Stadt/Land)</span>
+      <span class="ef-bar"><span class="ef-fill"></span></span>
+      <span class="ef-val">+6.7 pp</span>
+    </div>
+    <div class="ef-row" data-value="4.9">
+      <span class="ef-label">+ Einkommen</span>
+      <span class="ef-bar"><span class="ef-fill"></span></span>
+      <span class="ef-val">+4.9 pp</span>
+    </div>
+    <div class="ef-row" data-value="3.8">
+      <span class="ef-label">+ Konfession &amp; Alter</span>
+      <span class="ef-bar"><span class="ef-fill"></span></span>
+      <span class="ef-val">+3.8 pp</span>
+    </div>
+    <div class="ef-row final" data-value="3.5">
+      <span class="ef-label">→ Sprachregion-Reineffekt</span>
+      <span class="ef-bar"><span class="ef-fill"></span></span>
+      <span class="ef-val">+3.5 pp</span>
+    </div>
+  </div>
+</div>`.trim();
+  }
+
+  function animateEcoFallacy(wrap) {
+    const rows = wrap.querySelectorAll('.ef-row');
+    const MAX = 16; // pp, defines the bar scale
+    rows.forEach((row, i) => {
+      setTimeout(() => {
+        const v = parseFloat(row.dataset.value);
+        const fill = row.querySelector('.ef-fill');
+        if (fill) fill.style.width = (v / MAX * 100) + '%';
+      }, 200 + i * 380);
+    });
+  }
+
+  async function runEcoFallacyDemo() {
+    const ta = document.querySelector('.composer textarea');
+    if (!ta) return;
+    ta.setAttribute('readonly', '');
+    ta.blur();
+    await sleep(180);
+    await typeIntoTextarea(ta, FIFTH_Q);
+    await sleep(520);
+
+    appendUserMessage(ta.value);
+    ta.value = '';
+    ta.style.height = 'auto';
+    ta.dispatchEvent(new Event('input', { bubbles: true }));
+
+    const thinking = appendThinkingBubble();
+    await cycleThinking(thinking, FIFTH_THINKING);
+
+    const textEl = thinking.querySelector('.text');
+    textEl.innerHTML = '';
+
+    // Intro (mentions ecological fallacy)
+    const seg1 = document.createElement('div');
+    seg1.className = 'streaming-seg';
+    textEl.appendChild(seg1);
+    await typeHtml(seg1, FIFTH_INTRO_HTML, 6);
+
+    // Loader for the regression coefficient plot
+    await sleep(220);
+    const loaderHost = document.createElement('div');
+    loaderHost.innerHTML = `
+<div class="viz-loading">
+  <div class="viz-loading-head">
+    <span>Individualdaten-Mehrebenenmodell wird geschätzt · 247 000 Befragte</span>
+    <span class="thinking-dots"><span></span><span></span><span></span></span>
+  </div>
+  <div class="viz-loading-skeleton" style="height:160px"></div>
+</div>`.trim();
+    const loaderNode = loaderHost.firstElementChild;
+    textEl.appendChild(loaderNode);
+    scrollStream();
+    await sleep(1700);
+
+    // Replace with the eco-fallacy visualization
+    const ecoHost = document.createElement('div');
+    ecoHost.innerHTML = buildEcoFallacyHTML();
+    const ecoNode = ecoHost.firstElementChild;
+    loaderNode.replaceWith(ecoNode);
+    scrollStream();
+    await sleep(200);
+    animateEcoFallacy(ecoNode);
+    await sleep(2900);  // 6 rows × ~380ms + buffer
+
+    // Continuation
+    const seg2 = document.createElement('div');
+    seg2.className = 'streaming-seg';
+    textEl.appendChild(seg2);
+    await typeHtml(seg2, FIFTH_REST_HTML, 6);
+
+    scrollStream();
+    ta.removeAttribute('readonly');
+    ta.setAttribute('placeholder', FINAL_PLACEHOLDER);
+    updateTrust(93, 20, 'Mehrebenenmodell auf 247 000 Individualfällen — methodisch goldstandard, Effektgrössen statistisch hoch signifikant.');
+    saveDemoState('five');
+    // chain truly ends
+  }
+
+  function bindEcoFallacyTrigger(ta) {
+    let triggered = false;
+    const start = () => {
+      if (triggered) return;
+      triggered = true;
+      runEcoFallacyDemo();
+    };
+    ta.addEventListener('click', start);
+    ta.addEventListener('focus', start);
+  }
+
+  function bindFollowUpTrigger(ta) {
+    let triggered = false;
+    const start = () => {
+      if (triggered) return;
+      triggered = true;
+      runFollowUpDemo();
+    };
+    ta.addEventListener('click', start);
+    ta.addEventListener('focus', start);
+  }
+
+  function bindVisualizationTrigger(ta) {
+    let triggered = false;
+    const start = () => {
+      if (triggered) return;
+      triggered = true;
+      runVisualizationDemo();
+    };
+    ta.addEventListener('click', start);
+    ta.addEventListener('focus', start);
+  }
+
+  function bindAnimatedMapTrigger(ta) {
+    let triggered = false;
+    const start = () => {
+      if (triggered) return;
+      triggered = true;
+      runAnimatedMapDemo();
+    };
+    ta.addEventListener('click', start);
+    ta.addEventListener('focus', start);
+  }
+
+  // ============================================================
+  // Persistence — keep the generated chat across tab navigation
+  // (sessionStorage: persists within the browser tab, clears on close)
+  // ============================================================
+  const STORE = {
+    state: 'voxchat-state-v21',
+    html:  'voxchat-html-v21',
+    ph:    'voxchat-placeholder-v21'
+  };
+  function safeStore() {
+    try { return window.sessionStorage; } catch (_) { return null; }
+  }
+  function saveDemoState(state) {
+    const s = safeStore(); if (!s) return;
+    // Gather all three values BEFORE writing, so we either persist a
+    // consistent snapshot or none at all (avoid half-saved state where
+    // `state` is set but `html` failed due to quota).
+    const html = document.getElementById('chatStream').innerHTML;
+    const ta   = document.querySelector('.composer textarea');
+    const ph   = ta ? (ta.getAttribute('placeholder') || '') : '';
+    try {
+      s.setItem(STORE.html,  html);
+      s.setItem(STORE.ph,    ph);
+      s.setItem(STORE.state, state);
+    } catch (e) {
+      // Quota exceeded or storage disabled — wipe any partial write so the
+      // next page load starts cleanly rather than restoring a broken snapshot.
+      try { s.removeItem(STORE.html); s.removeItem(STORE.ph); s.removeItem(STORE.state); } catch (_) {}
+      console.warn('voxchat: snapshot save failed —', e && e.message);
+    }
+  }
+  function restoreDemoOrPlay() {
+    const s = safeStore();
+    const state = s ? s.getItem(STORE.state) : null;
+    const html  = s ? s.getItem(STORE.html)  : null;
+    const VALID = ['first', 'both', 'three', 'four', 'five'];
+
+    // Only restore if BOTH a recognised state and a non-empty HTML snapshot are present.
+    // Otherwise wipe any stray partial entries and start the demo fresh.
+    if (VALID.includes(state) && html && html.length > 100) {
+      // Restore HTML snapshot, unlock composer, reset placeholder
+      document.getElementById('chatStream').innerHTML = html;
+      const ta = document.querySelector('.composer textarea');
+      if (ta) {
+        ta.removeAttribute('readonly');
+        ta.setAttribute('placeholder', s.getItem(STORE.ph) || NEW_PLACEHOLDER);
+      }
+
+      // Re-install timeline hover (DOM elements are saved, listeners are not)
+      const svg = document.querySelector('.timeline-svg');
+      if (svg) svg.querySelectorAll('.hit, .tl-hover').forEach(el => el.remove());
+      setupTimelineHover();
+
+      // Re-attach commune hover handlers (the choropleth)
+      const mapWrap = document.getElementById('swissMap');
+      const mapTooltip = document.getElementById('mapTooltip');
+      if (mapWrap && mapTooltip) {
+        mapWrap.querySelectorAll('.commune').forEach(p => {
+          const yes = parseFloat(p.dataset.yes);
+          p.addEventListener('mouseenter', () => {
+            mapTooltip.innerHTML = `<strong>${p.dataset.name} (${p.dataset.ktkz})</strong>Ja-Anteil EWR 1992: ${yes.toFixed(1)} %`;
+            mapTooltip.style.opacity = '1';
+          });
+          p.addEventListener('mousemove', e => {
+            const r = mapWrap.getBoundingClientRect();
+            mapTooltip.style.left = (e.clientX - r.left) + 'px';
+            mapTooltip.style.top  = (e.clientY - r.top - 8) + 'px';
+          });
+          p.addEventListener('mouseleave', () => mapTooltip.style.opacity = '0');
+        });
+      }
+
+      // If the animated Röstigraben map was rendered, the saved snapshot
+      // already contains its final 2026 colour state. We still need to
+      // re-bind the replay button (event listeners don't survive innerHTML).
+      document.querySelectorAll('.rg-anim-wrap').forEach(w => bindReplayButton(w));
+
+      // Allow further demos to run if not yet done
+      if (state === 'first' && ta) bindFollowUpTrigger(ta);
+      if (state === 'both'  && ta) bindVisualizationTrigger(ta);
+      if (state === 'three' && ta) bindAnimatedMapTrigger(ta);
+      if (state === 'four'  && ta) bindEcoFallacyTrigger(ta);
+
+      // The canton map and the two stats cards belong to the first answer —
+      // make them visible on any restored state ≥ 'first'
+      const mapCard = document.getElementById('mapCard');
+      if (mapCard) mapCard.classList.remove('collapsed');
+      revealContextCards();
+      if (state === 'first') updateTrust(94, 7,  'Hohe Übereinstimmung zwischen Primärdaten und Sekundärliteratur.');
+      if (state === 'both')  updateTrust(83, 11, 'Subkohorte n=67 — methodisch komplex, einzelne Studien widersprechen sich.');
+      if (state === 'three') updateTrust(92, 14, 'Synthese über alle 704 Vorlagen — gute Replikation, Aggregateffekt robust.');
+      if (state === 'four')  updateTrust(75, 17, 'Räumliche Inferenz auf Mikro-Ebene — extrapolierte Werte, Einzelgemeinden statistisch schwach gestützt.');
+      if (state === 'five')  updateTrust(93, 20, 'Mehrebenenmodell auf 247 000 Individualfällen — methodisch goldstandard, Effektgrössen statistisch hoch signifikant.');
+
+      // Scroll to the last message
+      setTimeout(() => window.scrollTo({ top: document.body.scrollHeight }), 60);
+      return;
+    }
+
+    // Fresh visit (or stale/broken snapshot): wipe any leftover keys and play from scratch.
+    if (s) {
+      try { s.removeItem(STORE.state); s.removeItem(STORE.html); s.removeItem(STORE.ph); } catch (_) {}
+    }
+    runFirstAnswer();
+  }
+
+  if (document.readyState === 'complete') restoreDemoOrPlay();
+  else window.addEventListener('load', restoreDemoOrPlay);
+
+  // ============================================================
+  // Inline Swiss canton choropleth — colour cantons by data-yes
+  // (generalised geometry, offline-capable, no external requests).
+  // ============================================================
+  function colorForYes(yes) {
+    // Continuous diverging scale from deep red (Nein) to deep mint (Ja),
+    // passing through warm neutrals — no grey.
+    // Each colour is hand-picked so the midpoint feels desaturated but warm.
+    if (yes >= 80) return '#357770';   // very deep mint
+    if (yes >= 70) return '#5a9d96';   // deep mint
+    if (yes >= 60) return '#85c0ba';   // mint
+    if (yes >= 55) return '#a5d7d2';   // Uni Basel mint (standard)
+    if (yes >= 50) return '#cae6e2';   // light mint
+    if (yes >= 45) return '#ecdfd6';   // pale warm neutral (Ja-leaning)
+    if (yes >= 40) return '#eac9bc';   // pale warm rose (Nein-leaning)
+    if (yes >= 35) return '#d49d8c';   // soft red
+    if (yes >= 30) return '#bb6e5c';   // red
+    if (yes >= 25) return '#a04a3a';   // strong red
+    return '#7e2e22';                  // deep red
+  }
+  (function renderInlineMap() {
+    const wrap = document.getElementById('swissMap');
+    const tooltip = document.getElementById('mapTooltip');
+    if (!wrap) return;
+    wrap.querySelectorAll('.commune').forEach(p => {
+      const yes = parseFloat(p.dataset.yes);
+      const c = colorForYes(yes);
+      p.setAttribute('fill', c);
+      p.setAttribute('stroke', c);
+      p.addEventListener('mouseenter', () => {
+        tooltip.innerHTML = `<strong>${p.dataset.name} (${p.dataset.ktkz})</strong>Ja-Anteil EWR 1992: ${yes.toFixed(1)} %`;
+        tooltip.style.opacity = '1';
+      });
+      p.addEventListener('mousemove', e => {
+        const r = wrap.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - r.left) + 'px';
+        tooltip.style.top  = (e.clientY - r.top - 8) + 'px';
+      });
+      p.addEventListener('mouseleave', () => tooltip.style.opacity = '0');
+    });
+  })();
+</script>
 </body>
 </html>

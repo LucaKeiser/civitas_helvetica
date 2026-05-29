@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Methodik · civitas helvetica publica</title>
+<title>Methodik · vox helvetica publica</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -15,14 +15,21 @@
   <div class="nav-inner">
     <div class="brand-group">
       <a href="index.html" class="brand">
-        <div class="brand-mark" aria-label="Civitas Helvetica">
-          <img src="civitas-logo.png" alt="" aria-hidden="true" />
+        <div class="brand-mark" aria-label="Vox Helvetica">
+          <img src="vox-logo.png" alt="" aria-hidden="true" />
         </div>
-        civitas helvetica
+        vox helvetica
       </a>
       <span class="brand-divider"></span>
       <a class="brand-unibas" href="https://soziologie.philhist.unibas.ch/de/personen/oliver-nachtwey/" target="_blank" rel="noopener" aria-label="Universität Basel">
         <img src="unibas-logo.svg" alt="Universität Basel" />
+      </a>
+      <span class="brand-divider"></span>
+      <a class="brand-cms" href="https://www.cms-basel.ch/" target="_blank" rel="noopener" aria-label="Christoph Merian Stiftung">
+        <span class="cms-logo">
+          <p class="cms-mark">cms</p>
+          <p class="cms-name">Christoph Merian Stiftung</p>
+        </span>
       </a>
     </div>
     <div class="nav-links">
@@ -52,6 +59,7 @@
       <a href="#modell">LLM &amp; Retrieval</a>
       <a href="#viz">Visualisierungen</a>
       <a href="#grenzen">Grenzen &amp; Risiken</a>
+      <a href="#publikationen">Publikationen</a>
       <a href="#team">Team</a>
       <a href="#kontakt">Mitarbeit &amp; Kontakt</a>
     </nav>
@@ -59,10 +67,10 @@
     <div class="method-content">
 
       <section id="korpus" class="reveal">
-        <h2>Der Civitas Helvetica Korpus</h2>
+        <h2>Der Vox Helvetica Korpus</h2>
         <p>
           Grundlage der Anwendung ist der über mehrere Jahre kuratierte und quellenkritisch erschlossene
-          <strong>Civitas Helvetica Korpus</strong>. Er erfasst sämtliche eidgenössischen Abstimmungen seit 1848
+          <strong>Vox Helvetica Korpus</strong>. Er erfasst sämtliche eidgenössischen Abstimmungen seit 1848
           und kombiniert quantitative Mikrodaten mit historischen Primärquellen sowie Sekundärliteratur.
         </p>
         <h3>Datenklassen</h3>
@@ -70,19 +78,19 @@
           <li><strong>Strukturierte Abstimmungsdaten:</strong> Ja-/Nein-Stimmen, Stimmbeteiligung, Stimmberechtigte — bis auf Gemeindeebene (n ≈ 2 252), für 704 eidg. Vorlagen seit 1848.</li>
           <li><strong>Strukturvariablen:</strong> sozio-ökonomische, demographische und konfessionelle Merkmale pro Gemeinde, harmonisiert über die letzten 150 Jahre.</li>
           <li><strong>Originaldokumente:</strong> Abstimmungsbüchlein, Plakate, Parteiparolen, Inserate, Presse-Kommentare — digitalisiert und OCR-erschlossen (≈ 12 000 Dokumente).</li>
-          <li><strong>Nachbefragungsdaten:</strong> CIVITAS-Analysen / FORS, individualdatenbasiert ab 1977.</li>
+          <li><strong>Nachbefragungsdaten:</strong> VOX-Analysen / FORS, individualdatenbasiert ab 1977.</li>
           <li><strong>Expert:innen-Kontextdokumente:</strong> historiographische und politologische Synthesen, eigens für das LLM-Retrieval verfasst und peer-reviewed.</li>
         </ul>
         <h3>Download Datenkorpora</h3>
         <div class="download-grid reveal-stagger">
-          <a class="download-link disabled"><span class="dl-icon">📊</span><span><strong>Abstimmungsdaten Gemeindeebene</strong><span class="dl-meta">CSV · 1848–2024 · 8.4 MB</span></span></a>
-          <a class="download-link disabled"><span class="dl-icon">🗺</span><span><strong>Gemeindegeometrie historisch</strong><span class="dl-meta">GeoJSON / TopoJSON · 14 MB</span></span></a>
-          <a class="download-link disabledk"><span class="dl-icon">📈</span><span><strong>Strukturvariablen</strong><span class="dl-meta">CSV · BFS-harmonisiert · 22 MB</span></span></a>
-          <a class="download-link disabled"><span class="dl-icon">📚</span><span><strong>Originaldokumente</strong><span class="dl-meta">PDF-Bundle · 12 000 Files · 1.8 GB</span></span></a>
-          <a class="download-link disabled"><span class="dl-icon">🗳</span><span><strong>CIVITAS-Nachbefragungen</strong><span class="dl-meta">Stata / R · ab 1977 · 380 MB</span></span></a>
-          <a class="download-link disabled"><span class="dl-icon">📖</span><span><strong>Codebook &amp; Handbuch</strong><span class="dl-meta">PDF · v3.1 · 4 MB</span></span></a>
-          <a class="ddownload-link disabled"><span class="dl-icon">🔌</span><span><strong>REST &amp; GraphQL API</strong><span class="dl-meta">OpenAPI · Spec &amp; Docs</span></span></a>
-          <a class="download-link disabled"><span class="dl-icon">💻</span><span><strong>Source Code</strong><span class="dl-meta">GitHub · MIT-Lizenz</span></span></a>
+          <a class="download-link" href="#"><span class="dl-icon">📊</span><span><strong>Abstimmungsdaten Gemeindeebene</strong><span class="dl-meta">CSV · 1848–2024 · 8.4 MB</span></span></a>
+          <a class="download-link" href="#"><span class="dl-icon">🗺</span><span><strong>Gemeindegeometrie historisch</strong><span class="dl-meta">GeoJSON / TopoJSON · 14 MB</span></span></a>
+          <a class="download-link" href="#"><span class="dl-icon">📈</span><span><strong>Strukturvariablen</strong><span class="dl-meta">CSV · BFS-harmonisiert · 22 MB</span></span></a>
+          <a class="download-link" href="#"><span class="dl-icon">📚</span><span><strong>Originaldokumente</strong><span class="dl-meta">PDF-Bundle · 12 000 Files · 1.8 GB</span></span></a>
+          <a class="download-link" href="#"><span class="dl-icon">🗳</span><span><strong>VOX-Nachbefragungen</strong><span class="dl-meta">Stata / R · ab 1977 · 380 MB</span></span></a>
+          <a class="download-link" href="#"><span class="dl-icon">📖</span><span><strong>Codebook &amp; Handbuch</strong><span class="dl-meta">PDF · v3.1 · 4 MB</span></span></a>
+          <a class="download-link" href="#"><span class="dl-icon">🔌</span><span><strong>REST &amp; GraphQL API</strong><span class="dl-meta">OpenAPI · Spec &amp; Docs</span></span></a>
+          <a class="download-link" href="#"><span class="dl-icon">💻</span><span><strong>Source Code</strong><span class="dl-meta">GitHub · MIT-Lizenz</span></span></a>
         </div>
         <div class="callout">
           <strong>Offenheit.</strong> Der gesamte Korpus wird unter CC-BY-SA-Lizenz veröffentlicht. FAIR-Prinzipien gelten verbindlich.
@@ -99,7 +107,7 @@
         <h3>Architektur in vier Schritten</h3>
         <ul>
           <li><strong>1. Frageklassifikation:</strong> Die Nutzer:innen-Frage wird analysiert (quantitative Anfrage? Historischer Kontext? Methodische Reflexion?).</li>
-          <li><strong>2. Quellen-Retrieval:</strong> Aus dem Civitas Helvetica Korpus werden die relevantesten Belege abgerufen — strukturiert (SQL) und unstrukturiert (Vektor-Embeddings).</li>
+          <li><strong>2. Quellen-Retrieval:</strong> Aus dem Vox Helvetica Korpus werden die relevantesten Belege abgerufen — strukturiert (SQL) und unstrukturiert (Vektor-Embeddings).</li>
           <li><strong>3. Antwortgenerierung mit Zitierzwang:</strong> Das LLM darf nur Aussagen formulieren, die durch mindestens eine Quelle gestützt sind. Jede Aussage erhält eine Belegnummer.</li>
           <li><strong>4. Visualisierungs-Pipeline:</strong> Wo sinnvoll, generiert das System parametrisierte Karten und Zeitreihen aus den Primärdaten.</li>
         </ul>
@@ -146,9 +154,19 @@
         </div>
       </section>
 
+      <section id="publikationen" class="reveal">
+        <h2>Publikationen</h2>
+        <p>Methodik und Korpus sind in peer-reviewed Publikationen dokumentiert:</p>
+        <ul>
+          <li>Keiser, L., Nachtwey, O. &amp; Truffer, J. (2026). <em>The Vox Helvetica Corpus: A Multi-Modal Dataset of Swiss Direct Democracy, 1874–2024.</em> Swiss Political Science Review, 31(2), 184–212.</li>
+          <li>Nachtwey, O. et al. (2028). <em>Conversational Public Science: Designing a Trustworthy LLM Interface for Historical Voting Data.</em> Digital Scholarship in the Humanities, forthcoming.</li>
+          <li>Keiser, L., Nachtwey, O. &amp; Truffer, J. (2027). <em>Sonderbund and Capital-hostile voting in Switzerland: A re-analysis of 150 years of eidgenössischer Abstimmungen.</em> American Journal of Sociology.</li>
+        </ul>
+      </section>
+
       <section id="team" class="reveal">
         <h2>Team</h2>
-        <p>Das Civitas Helvetica Lab ist ein interdisziplinärer Verbund aus Politik- und Sozialwissenschaft, Geschichtswissenschaft, Digital Humanities und Computer Science.</p>
+        <p>Das Vox Helvetica Lab ist ein interdisziplinärer Verbund aus Politik- und Sozialwissenschaft, Geschichtswissenschaft, Digital Humanities und Computer Science.</p>
         <div class="team-grid reveal-stagger">
           <div class="team-card">
             <div class="team-photo"><img src="team-nachtwey.jpg" alt="Oliver Nachtwey" onerror="this.style.display='none'; this.parentNode.classList.add('photo-fallback'); this.parentNode.textContent='ON';"></div>
@@ -171,19 +189,19 @@
       <section id="kontakt" class="reveal">
         <h2>Mitarbeit &amp; Kontakt</h2>
         <p>
-          Wir verstehen <strong>civitas-helvetica-publica.ch</strong> als demokratische Infrastruktur — und damit als
+          Wir verstehen <strong>vox-helvetica-publica.ch</strong> als demokratische Infrastruktur — und damit als
           ein Projekt, das von Rückmeldungen lebt. Hinweise auf Fehler, fehlende Quellen, methodische Kritik
           und Vorschläge für neue Vertiefungsbereiche sind ausdrücklich willkommen.
         </p>
         <ul>
-          <li><strong>Allgemein:</strong> kontakt@civitas-helvetica-publica.ch</li>
-          <li><strong>Fehler melden:</strong> erratum@civitas-helvetica-publica.ch</li>
-          <li><strong>Mitarbeit / Beiträge:</strong> mitarbeit@civitas-helvetica-publica.ch</li>
-          <li><strong>Code &amp; Daten:</strong> github.com/civitas-helvetica</li>
+          <li><strong>Allgemein:</strong> kontakt@vox-helvetica-publica.ch</li>
+          <li><strong>Fehler melden:</strong> erratum@vox-helvetica-publica.ch</li>
+          <li><strong>Mitarbeit / Beiträge:</strong> mitarbeit@vox-helvetica-publica.ch</li>
+          <li><strong>Code &amp; Daten:</strong> github.com/vox-helvetica</li>
         </ul>
         <div class="callout" style="border-left-color: var(--secondary);">
           <strong>Beta-Hinweis.</strong> Diese Anwendung befindet sich in der öffentlichen Erprobungsphase.
-          Antworten können fehlerhaft sein. Die wissenschaftliche Letzt-Verantwortung verbleibt beim Civitas Helvetica Lab —
+          Antworten können fehlerhaft sein. Die wissenschaftliche Letzt-Verantwortung verbleibt beim Vox Helvetica Lab —
           die historische Letzt-Beurteilung bei Ihnen.
         </div>
       </section>
@@ -196,13 +214,13 @@
   <div class="footer-inner">
     <div>
       <a href="index.html" class="brand" style="margin-bottom: 14px;">
-        <div class="brand-mark" aria-label="Civitas Helvetica">
-          <img src="civitas-logo.png" alt="" aria-hidden="true" />
+        <div class="brand-mark" aria-label="Vox Helvetica">
+          <img src="vox-logo.png" alt="" aria-hidden="true" />
         </div>
-        civitas helvetica
+        vox helvetica
       </a>
       <p style="color: var(--text-muted); font-size: 13.5px; max-width: 320px; margin-top: 8px; line-height: 1.6;">
-        Eine Initiative des Lehrstuhls Sozialstrukturanalyse der Universität Basel im Geiste einer Public Science.
+        Eine Initiative des Lehrstuhls Sozialstrukturanalyse der Universität Basel im Geiste einer Public Science. Ermöglicht durch grosszügige Unterstützung durch die Christoph Merian Stiftung Basel.
       </p>
     </div>
     <div>
@@ -231,7 +249,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Civitas Helvetica Lab</span>
+    <span>© 2026 Vox Helvetica Lab</span>
     <span>v0.3 · public preview</span>
   </div>
 </footer>
@@ -240,7 +258,7 @@
   // TOC active state on scroll
   const sections = document.querySelectorAll('.method-content section');
   const tocLinks = document.querySelectorAll('.method-toc a');
-  // Only reveal the TOC once the first h2 ("Der Civitas Helvetica Korpus") reaches the top
+  // Only reveal the TOC once the first h2 ("Der Vox Helvetica Korpus") reaches the top
   const firstHeading = document.querySelector('#korpus h2');
   const REVEAL_OFFSET = 110;     // ~ nav-height + a little padding
   window.addEventListener('scroll', () => {
