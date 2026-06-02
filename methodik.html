@@ -56,7 +56,7 @@
     <div class="method-content">
 
       <section id="korpus" class="reveal">
-        <h2>Der <i>civitas helvetica</i>-Korpus</h2>
+        <h2>Der civitas helvetica-Korpus</h2>
         <p>
           Grundlage der Anwendung ist der über mehrere Jahre kuratierte und quellenkritisch erschlossene
           <strong>civitas helvetica-Korpus</strong>. Er erfasst sämtliche Eidgenössischen Abstimmungen seit 1848
@@ -96,7 +96,7 @@
         <h3>Architektur in vier Schritten</h3>
         <ul>
           <li><strong>1. Frageklassifikation:</strong> Die Nutzer:innen-Frage wird analysiert (quantitative Anfrage? Historischer Kontext? Methodische Reflexion?).</li>
-          <li><strong>2. Quellen-Retrieval:</strong> Aus dem <i>civitas helvetica</i>-Korpus werden die relevantesten Belege abgerufen — strukturiert (SQL) und unstrukturiert (Vektor-Embeddings).</li>
+          <li><strong>2. Quellen-Retrieval:</strong> Aus dem civitas helvetica-Korpus werden die relevantesten Belege abgerufen — strukturiert (SQL) und unstrukturiert (Vektor-Embeddings).</li>
           <li><strong>3. Antwortgenerierung mit Zitierzwang:</strong> Das LLM darf nur Aussagen formulieren, die durch mindestens eine Quelle gestützt sind. Jede Aussage erhält eine Belegnummer.</li>
           <li><strong>4. Visualisierungs-Pipeline:</strong> Wo sinnvoll, generiert das System parametrisierte Karten und Zeitreihen aus den Primärdaten.</li>
         </ul>
@@ -131,7 +131,7 @@
         </p>
         <h3>Bekannte Limitationen</h3>
         <ul>
-          <li><strong>Datenlücken vor 1971:</strong> Frauen waren auf Bundesebene nicht stimmberechtigt. Aussagen über «die Schweizer Bevölkerung» vor 1971 betreffen ausschliesslich die männliche Stimmberechtigung.</li>
+          <li><strong>Datenlücken vor 1971:</strong> Frauen waren auf Bundesebene nicht stimmberechtigt. Aussagen über «die Schweizer Bevölkerung» vor 1971 betreffen ausschliesslich die männliche Stimmbevölkerung.</li>
           <li><strong>Gemeinde-Reformen:</strong> Fusionen seit 1850 verändern die Vergleichbarkeit. Wir nutzen rückprojizierte Gemeindegrenzen (BFS, 2024).</li>
           <li><strong>Kausalität ≠ Korrelation:</strong> Das LLM kennzeichnet Korrelationen explizit als solche und vermeidet kausale Sprache, wo nicht angebracht.</li>
           <li><strong>LLM-Konfabulation:</strong> Trotz Retrieval-Grounding bleibt ein Restrisiko inkorrekter Synthese. Bei niedrigem Vertrauensindex (&lt; 70 %) zeigt das System eine Warnung.</li>
@@ -145,7 +145,7 @@
 
       <section id="team" class="reveal">
         <h2>Team</h2>
-        <p>Das <i>civitas helvetica</i>-Lab ist ein interdisziplinärer Verbund aus Politik- und Sozialwissenschaft, Geschichtswissenschaft, Digital Humanities und Computer Science.</p>
+        <p>Das civitas helvetica-Lab ist ein interdisziplinärer Verbund aus Politik- und Sozialwissenschaft, Geschichtswissenschaft, Digital Humanities und Computer Science.</p>
         <div class="team-grid reveal-stagger">
           <div class="team-card">
             <div class="team-photo"><img src="team-nachtwey.jpg" alt="Oliver Nachtwey" onerror="this.style.display='none'; this.parentNode.classList.add('photo-fallback'); this.parentNode.textContent='ON';"></div>
@@ -174,7 +174,7 @@
         </p>
         <div class="callout" style="border-left-color: var(--secondary);">
           <strong>Beta-Hinweis.</strong> Diese Anwendung befindet sich in der öffentlichen Erprobungsphase.
-          Antworten können fehlerhaft sein. Die wissenschaftliche Letzt-Verantwortung verbleibt beim <i>civitas helvetica</i>-Lab —
+          Antworten können fehlerhaft sein. Die wissenschaftliche Letzt-Verantwortung verbleibt beim civitas helvetica-Lab —
           die historische Letzt-Beurteilung bei Ihnen.
         </div>
       </section>
@@ -221,7 +221,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 <i>civitas helvetica</i>-Lab · Universität Basel — Sozialstrukturanalyse</span>
+    <span>© 2026 civitas helvetica-Lab · Universität Basel — Sozialstrukturanalyse</span>
     <span>v0.3 · public preview</span>
   </div>
 </footer>
