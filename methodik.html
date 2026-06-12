@@ -33,7 +33,7 @@
 
 <header class="hero reveal-stagger" style="padding-bottom: 32px;">
   <span class="eyebrow"><span class="dot dot-blue"></span>Methodik & Transparenz</span>
-  <h1>Wie diese Anwendung <span class="accent">funktioniert</span>.</h1>
+  <h1>Wie diese Anwendung <span class="accent">funktioniert</span></h1>
   <p class="lede lede-grid-aligned" style="margin-bottom: 0;">
     Eine konversationsbasierte Anwendung ist nur so vertrauenswürdig wie ihre Quellen, ihr Modell und ihre Methode.
     Hier dokumentieren wir alle drei — offen, reproduzierbar, kritisierbar.
@@ -67,22 +67,22 @@
           <li><strong>Strukturierte Abstimmungsdaten:</strong> Ja-/Nein-Stimmen, Stimmbeteiligung, Stimmberechtigte — bis auf Gemeindeebene (n = 2'000+), für 700+ Eidgenössische Vorlagen seit 1848.</li>
           <li><strong>Strukturvariablen:</strong> sozio-ökonomische, demographische und konfessionelle Merkmale pro Gemeinde, harmonisiert über die letzten 150 Jahre.</li>
           <li><strong>Originaldokumente:</strong> Abstimmungsbüchlein, Plakate, Parteiparolen, Inserate, Presse-Kommentare — digitalisiert und OCR-erschlossen (12'000+ Dokumente).</li>
-          <li><strong>Nachbefragungsdaten:</strong> VOX-Analysen / FORS, individualdatenbasiert ab 1977.</li>
-          <li><strong>Expert:innen-Kontextdokumente:</strong> historiographische und politologische Synthesen, eigens für das LLM-Retrieval verfasst und peer-reviewed.</li>
+          <li><strong>Nachbefragungsdaten:</strong> VOX-Analysen (gfs.bern/VOTO) individualdatenbasiert ab 1977.</li>
+          <li><strong>Expert:innen-Dokumente:</strong> historiographische und politologische Synthesen, eigens für das LLM-Retrieval verfasst und peer-reviewed.</li>
         </ul>
         <h3>Download Datenkorpora</h3>
 	<div class="download-grid reveal-stagger">
-  			<div class="download-link"><span class="dl-icon">📊</span><span><strong>Abstimmungsdaten Gemeindeebene</strong><span class="dl-meta">CSV · 1848–2026 · 8.4 MB</span></span></div>
-	   <div class="download-link"><span class="dl-icon">🗺️</span><span><strong>Gemeindegeometrie historisch</strong><span class="dl-meta">GeoJSON / TopoJSON · 14 MB</span></span></div>
-	    <div class="download-link"><span class="dl-icon">📈</span><span><strong>Strukturvariablen</strong><span class="dl-meta">CSV · BFS-harmonisiert · 22 MB</span></span></div>
- 		    <div class="download-link"><span class="dl-icon">📚</span><span><strong>Originaldokumente</strong><span class="dl-meta">PDF-Bundle · 12'000+ Files · 1.8 GB</span></span></div>
- 			 <div class="download-link"><span class="dl-icon">🗳️</span><span><strong>VOX-Nachbefragungen</strong><span class="dl-meta">Stata / R · ab 1977 · 380 MB</span></span></div>
-	   <div class="download-link"><span class="dl-icon">📖</span><span><strong>Codebook &amp; Handbuch</strong><span class="dl-meta">PDF · v3.1 · 4 MB</span></span></div>
+  			<div class="download-link"><span class="dl-icon">📊</span><span><strong>Abstimmungsdaten Gemeindeebene</strong><span class="dl-meta">CSV · 1848–2026</span></span></div>
+	   <div class="download-link"><span class="dl-icon">🗺️</span><span><strong>Gemeindegeometrie historisch</strong><span class="dl-meta">GeoJSON/TopoJSON</span></span></div>
+	    <div class="download-link"><span class="dl-icon">📈</span><span><strong>Strukturvariablen</strong><span class="dl-meta">CSV · BFS-harmonisiert</span></span></div>
+ 		    <div class="download-link"><span class="dl-icon">📚</span><span><strong>Originaldokumente</strong><span class="dl-meta">PDF-Bundle · 12'000+ Files</span></span></div>
+ 			 <div class="download-link"><span class="dl-icon">🗳️</span><span><strong>VOX-Nachbefragungen</strong><span class="dl-meta">RDS/CSV · ab 1977</span></span></div>
+	   <div class="download-link"><span class="dl-icon">📖</span><span><strong>Codebook &amp; Handbuch</strong><span class="dl-meta">PDF-File</span></span></div>
   			<div class="download-link"><span class="dl-icon">🔌</span><span><strong>REST &amp; GraphQL API</strong><span class="dl-meta">OpenAPI · Spec &amp; Docs</span></span></div>
- 	   <div class="download-link"><span class="dl-icon">💻</span><span><strong>Source Code</strong><span class="dl-meta">GitHub · MIT-Lizenz</span></span></div>
+ 	   <div class="download-link"><span class="dl-icon">💻</span><span><strong>Source Code</strong><span class="dl-meta">GitHub</span></span></div>
 	</div>
         <div class="callout">
-          <strong>Offenheit.</strong> Der gesamte Korpus wird unter CC-BY-SA-Lizenz veröffentlicht. FAIR-Prinzipien gelten verbindlich.
+          <strong>Offenheit.</strong> Der gesamte Korpus ist öffentlicht zugänglich. FAIR-Prinzipien gelten verbindlich.
         </div>
       </section>
 
@@ -96,12 +96,12 @@
         <h3>Architektur in vier Schritten</h3>
         <ul>
           <li><strong>1. Frageklassifikation:</strong> Die Nutzer:innen-Frage wird analysiert (quantitative Anfrage? Historischer Kontext? Methodische Reflexion?).</li>
-          <li><strong>2. Quellen-Retrieval:</strong> Aus dem civitas helvetica-Korpus werden die relevantesten Belege abgerufen — strukturiert (SQL) und unstrukturiert (Vektor-Embeddings).</li>
+          <li><strong>2. Quellen-Retrieval:</strong> Aus dem civitas helvetica-Korpus werden die relevantesten Belege abgerufen.</li>
           <li><strong>3. Antwortgenerierung mit Zitierzwang:</strong> Das LLM darf nur Aussagen formulieren, die durch mindestens eine Quelle gestützt sind. Jede Aussage erhält eine Belegnummer.</li>
           <li><strong>4. Visualisierungs-Pipeline:</strong> Wo sinnvoll, generiert das System parametrisierte Karten und Zeitreihen aus den Primärdaten.</li>
         </ul>
         <div class="callout">
-          <strong>Transparenzgarantie.</strong> Jeder Output wird mit dem zugrundeliegenden Quellenprompt, dem Modell-Hash und dem Datensatz-Snapshot protokolliert.
+          <strong>Transparenzgarantie.</strong> Jeder Output wird mit dem zugrundeliegenden Quellenprompt protokolliert.
           So bleibt jede Antwort reproduzierbar.
         </div>
       </section>
@@ -109,17 +109,17 @@
       <section id="viz" class="reveal">
         <h2>Interaktive Visualisierungen</h2>
         <p>
-          Antworten werden durch reproduzierbare, interaktive Visualisierungen ergänzt: Choroplethen-Karten der über 2'000 Schweizer Gemeinden,
+          Antworten werden durch reproduzierbare, interaktive Visualisierungen ergänzt: Karten der über 2'000 Schweizer Gemeinden,
           historische Zeitreihen, Vergleichsplots zwischen Strukturvariablen, sowie räumliche Cluster-Analysen.
           Alle Diagramme sind als PNG/SVG exportierbar; die zugrundeliegenden Daten lassen sich als CSV oder über die API beziehen.
         </p>
         <h3>Verfügbare Visualisierungstypen</h3>
         <ul>
-          <li>Schweizer Choroplethen (Gemeinde-, Bezirks-, Kantonsebene)</li>
+          <li>Schweizer Karten (Gemeinde-, Bezirks-, Kantonsebene)</li>
           <li>Historische Zeitreihen (1848–heute) mit Annotationen wichtiger Ereignisse</li>
           <li>Sprachregionen- und Stadt-Land-Vergleiche</li>
-          <li>Strukturvariablen-Korrelationen (z. B. Konfession × Ja-Anteil)</li>
-          <li>Lebenslauf-Simulator: «Wie hätte jemand wie ich vor X Jahren abgestimmt?»</li>
+          <li>Strukturvariablen-Korrelationen (z. B. Konfession x Ja-Anteil)</li>
+          <li>Lebenslauf-Simulator: «Wie hätte jemand wie ich vor 50 Jahren abgestimmt?»</li>
         </ul>
       </section>
 
@@ -135,7 +135,7 @@
           <li><strong>Gemeinde-Reformen:</strong> Fusionen seit 1850 verändern die Vergleichbarkeit. Wir nutzen rückprojizierte Gemeindegrenzen (BFS, 2024).</li>
           <li><strong>Kausalität ≠ Korrelation:</strong> Das LLM kennzeichnet Korrelationen explizit als solche und vermeidet kausale Sprache, wo nicht angebracht.</li>
           <li><strong>LLM-Konfabulation:</strong> Trotz Retrieval-Grounding bleibt ein Restrisiko inkorrekter Synthese. Bei niedrigem Vertrauensindex (&lt; 70 %) zeigt das System eine Warnung.</li>
-          <li><strong>Sprachliche Bias:</strong> Quellen sind überwiegend auf Deutsch; Französisch- und Italienisch-Quellen sind unterrepräsentiert. Wir arbeiten aktiv an Ausgleich.</li>
+          <li><strong>Sprachliche Bias:</strong> Quellen sind überwiegend auf Deutsch. Französisch- und Italienisch-Quellen sind unterrepräsentiert. Wir arbeiten aktiv am Ausgleich.</li>
         </ul>
         <div class="callout">
           <strong>Bei Unsicherheit: Quelle prüfen.</strong> Das Werkzeug ersetzt keine wissenschaftliche Recherche, sondern soll sie eröffnen.
@@ -173,7 +173,7 @@
           und Vorschläge für neue Vertiefungsbereiche sind ausdrücklich willkommen.
         </p>
         <div class="callout" style="border-left-color: var(--secondary);">
-          <strong>Beta-Hinweis.</strong> Diese Anwendung befindet sich in der öffentlichen Erprobungsphase.
+          <strong>Beta-Hinweis.</strong> Bei dieser Webseite handelt es sich um eine Demonstrationsapplikation. Die Webseite ist ausschliesslich für den internen Gebrauch konzipiert und nicht für die öffentliche Zirkulation bestimmt.
           Antworten können fehlerhaft sein. Die wissenschaftliche Letzt-Verantwortung verbleibt beim civitas helvetica-Lab —
           die historische Letzt-Beurteilung bei Ihnen.
         </div>
@@ -216,13 +216,12 @@
       <ul>
         <li><a href="#">Impressum</a></li>
         <li><a href="#">Datenschutz</a></li>
-        <li><a href="#">Lizenz</a></li>
+        <li><a href="#">Kontakt</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 civitas helvetica-Lab · Universität Basel — Sozialstrukturanalyse</span>
-    <span>v0.3 · public preview</span>
   </div>
 </footer>
 
